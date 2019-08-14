@@ -62,7 +62,8 @@ modules:
       - install -Dm644 flatpak-warning.txt -t /app/share/vscode
       - install -D apply_extra -t /app/bin
       - cp /usr/bin/ar /app/bin
-      - ARCH_TRIPLE=$(gcc --print-multiarch) && cp /usr/lib/${ARCH_TRIPLE}/libbfd-*.so /app/lib
+      - ARCH_TRIPLE=$(gcc --print-multiarch) && cp /usr/lib/${ARCH_TRIPLE}/libbfd-*.so
+        /app/lib
       - ARCH_TRIPLE=$(gcc --print-multiarch) && ln -s /usr/lib/${ARCH_TRIPLE}/libtinfo.so/app/lib/libtinfo.so.5
     sources:
       - type: script
@@ -93,6 +94,6 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [x86_64]
-        url: https://update.code.visualstudio.com/1.37.0/linux-deb-x64/stable
+        url: https://az764295.vo.msecnd.net/stable/036a6b1d3ac84e5ca96a17a44e63a87971f8fcc8/code_1.37.0-1565227985_amd64.deb
         sha256: b5a7392e9496ddff99cf304d9de11a53b0a0c691ac6c818e218eaf1ed79c9958
         size: 54799344
