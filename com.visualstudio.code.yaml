@@ -62,8 +62,7 @@ modules:
       - install -Dm644 flatpak-warning.txt -t /app/share/vscode
       - install -D apply_extra -t /app/bin
       - cp /usr/bin/ar /app/bin
-      - ARCH_TRIPLE=$(gcc --print-multiarch) && cp /usr/lib/${ARCH_TRIPLE}/libbfd-*.so
-        /app/lib
+      - ARCH_TRIPLE=$(gcc --print-multiarch) && cp /usr/lib/${ARCH_TRIPLE}/libbfd-*.so /app/lib
       - ARCH_TRIPLE=$(gcc --print-multiarch) && ln -s /usr/lib/${ARCH_TRIPLE}/libtinfo.so/app/lib/libtinfo.so.5
     sources:
       - type: script
@@ -94,9 +93,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [x86_64]
-        url: http://packages.microsoft.com/repos/vscode/pool/main/c/code/code_1.38.1-1568209190_amd64.deb
-        sha256: f00459dcd181a591f1f4d18040c210535ad722e4cba4d59a881268a18f4d382e
-        size: 55447846
+        url: http://packages.microsoft.com/repos/vscode/pool/main/c/code/code_1.39.0-1570604710_amd64.deb
+        sha256: d738eba9705e6878fad0c954ea8b3459eed5186559c15837fa208110de3214d7
+        size: 54717596
         x-checker-data:
           type: debian-repo
           package-name: code
