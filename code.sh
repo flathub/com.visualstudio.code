@@ -21,6 +21,10 @@ if [[ -d /usr/lib/sdk/php73 ]]; then
   . /usr/lib/sdk/php73/enable.sh
 fi
 
+if [[ -d /usr/lib/sdk/php74 ]]; then
+  . /usr/lib/sdk/php74/enable.sh
+fi
+
 if [[ -d /usr/lib/sdk/openjdk8 ]]; then
   . /usr/lib/sdk/openjdk8/enable.sh
 fi
