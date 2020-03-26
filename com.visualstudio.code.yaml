@@ -68,7 +68,7 @@ modules:
       - type: file
         path: npmrc
       - type: file
-        path: com.visualstudio.code.appdata.xml
+        path: com.visualstudio.code.metainfo.xml
       - type: file
         path: com.visualstudio.code.desktop
       - type: file
