@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e
+shopt -s nullglob
 
 FIRST_RUN="${XDG_CONFIG_HOME}/flatpak-vscode-first-run"
 
@@ -12,6 +13,11 @@ if [ ! -f ${FIRST_RUN} ]; then
   WARNING_FILE="/app/share/vscode/flatpak-warning.txt"
   touch ${FIRST_RUN}
 fi
+
+for tool_bin in /app/tools/*/bin; do
+  msg "Adding $tool_bin to PATH"
+  export PATH=$PATH:$tool_bin
+done
 
 if [ "$FLATPAK_ENABLE_SDK_EXT" = "*" ]; then
   SDK=()
