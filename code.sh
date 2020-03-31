@@ -14,9 +14,21 @@ if [ ! -f ${FIRST_RUN} ]; then
   touch ${FIRST_RUN}
 fi
 
-for tool_bin in /app/tools/*/bin; do
-  msg "Adding $tool_bin to PATH"
-  export PATH=$PATH:$tool_bin
+for tool_dir in /app/tools/*; do
+  tool_bindir=$tool_dir/bin
+  if [ -d "$tool_bindir" ]; then
+    msg "Adding $tool_bindir to PATH"
+    export PATH=$PATH:$tool_bindir
+  fi
+  tool_pythondir=$tool_dir/lib/python3.7/site-packages
+  if [ -d "$tool_pythondir" ]; then
+    msg "Adding $tool_pythondir to PYTHONPATH"
+    if [ -z "$PYTHONPATH" ]; then
+      export PYTHONPATH=$PYTHONPATH:$tool_pythondir
+    else
+      export PYTHONPATH=$tool_pythondir
+    fi
+  fi
 done
 
 if [ "$FLATPAK_ENABLE_SDK_EXT" = "*" ]; then
