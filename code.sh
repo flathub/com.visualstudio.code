@@ -14,13 +14,20 @@ if [ ! -f ${FIRST_RUN} ]; then
   touch ${FIRST_RUN}
 fi
 
+PYTHON_SITEDIR=$(python3 <<EOFPYTHON
+import os
+import site
+print(os.path.relpath(site.getusersitepackages(), site.getuserbase()))
+EOFPYTHON
+)
+
 for tool_dir in /app/tools/*; do
   tool_bindir=$tool_dir/bin
   if [ -d "$tool_bindir" ]; then
     msg "Adding $tool_bindir to PATH"
     export PATH=$PATH:$tool_bindir
   fi
-  tool_pythondir=$tool_dir/lib/python3.7/site-packages
+  tool_pythondir=$tool_dir/$PYTHON_SITEDIR
   if [ -d "$tool_pythondir" ]; then
     msg "Adding $tool_pythondir to PYTHONPATH"
     if [ -z "$PYTHONPATH" ]; then
