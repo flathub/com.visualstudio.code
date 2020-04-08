@@ -31,9 +31,9 @@ for tool_dir in /app/tools/*; do
   if [ -d "$tool_pythondir" ]; then
     msg "Adding $tool_pythondir to PYTHONPATH"
     if [ -z "$PYTHONPATH" ]; then
-      export PYTHONPATH=$PYTHONPATH:$tool_pythondir
-    else
       export PYTHONPATH=$tool_pythondir
+    else
+      export PYTHONPATH=$PYTHONPATH:$tool_pythondir
     fi
   fi
 done
