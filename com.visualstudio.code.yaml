@@ -27,6 +27,7 @@ finish-args:
   - --filesystem=xdg-config/kdeglobals:ro
   - --talk-name=com.canonical.AppMenu.Registrar
   - --talk-name=com.canonical.AppMenu.Registrar.*
+  - --system-talk-name=org.freedesktop.login1
 add-extensions:
   com.visualstudio.code.tool:
     directory: tools
