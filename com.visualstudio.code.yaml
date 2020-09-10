@@ -88,9 +88,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [x86_64]
-        url: http://packages.microsoft.com/repos/vscode/pool/main/c/code/code_1.48.2-1598353430_amd64.deb
-        sha256: 6fb7aeb439a377010e4d0ab488fdbcbeb1b399d08cbdb376e65e31f96881bdf0
-        size: 63052638
+        url: http://packages.microsoft.com/repos/vscode/pool/main/c/code/code_1.49.0-1599744551_amd64.deb
+        sha256: 3da7ed9ef6afac1fde962237def2179ca5d4b64bdbf788c93e1c153e588a4816
+        size: 64556344
         x-checker-data:
           type: debian-repo
           package-name: code
