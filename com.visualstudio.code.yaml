@@ -30,6 +30,7 @@ add-extensions:
   com.visualstudio.code.tool:
     directory: tools
     subdirectories: true
+    version: '20.08'
     add-ld-path: lib
     no-autodownload: true
 cleanup:
