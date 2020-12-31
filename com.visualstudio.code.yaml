@@ -98,3 +98,15 @@ modules:
           root: http://packages.microsoft.com/repos/vscode
           dist: stable
           component: main
+      - type: extra-data
+        filename: code.deb
+        only-arches: [aarch64]
+        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.52.1-1608136325_arm64.deb
+        sha256: af05fb9d7c9a86d6653fffc9fbe46c3d8b9be8195d85ae9529e9e5fd89bd2ddc
+        size: 64631738
+        x-checker-data:
+          type: debian-repo
+          package-name: code
+          root: http://packages.microsoft.com/repos/vscode
+          dist: stable
+          component: main
