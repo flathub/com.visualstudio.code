@@ -107,7 +107,7 @@ modules:
         x-checker-data:
           type: debian-repo
           package-name: code
-          root: http://packages.microsoft.com/repos/vscode
+          root: http://packages.microsoft.com/repos/code
           dist: stable
           component: main
       - type: extra-data
@@ -119,6 +119,6 @@ modules:
         x-checker-data:
           type: debian-repo
           package-name: code
-          root: http://packages.microsoft.com/repos/vscode
+          root: http://packages.microsoft.com/repos/code
           dist: stable
           component: main
