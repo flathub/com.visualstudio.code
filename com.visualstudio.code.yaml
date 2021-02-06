@@ -67,7 +67,7 @@ modules:
           - ar x code.deb
           - tar xf data.tar.xz
           - mv usr/share/code vscode
-          - rm -r code.deb control.tar.gz data.tar.xz debian-binary usr
+          - rm -r code.deb control.tar.xz data.tar.xz debian-binary usr
       - type: file
         path: code.sh
       - type: file
@@ -89,21 +89,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [x86_64]
-        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.52.1-1608136922_amd64.deb
-        sha256: eccdcaa756fa58947fa046f3a0b3420e8b93c22fb1d50de76f5d8a313a3f5fa4
-        size: 64770102
-        x-checker-data:
-          type: debian-repo
-          package-name: code
-          root: http://packages.microsoft.com/repos/code
-          dist: stable
-          component: main
-      - type: extra-data
-        filename: code.deb
-        only-arches: [arm]
-        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.52.1-1608136275_armhf.deb
-        sha256: 35fbc1e755e12c917686ccbb70bc52baef42eab07f2b22c83886b7979f9b3330
-        size: 60667760
+        url: http://packages.microsoft.com/repos/vscode/pool/main/c/code/code_1.53.0-1612368357_amd64.deb
+        sha256: aceb855fca3ec903e873c1e5460e929434314af7f5d96a7a4e57ef4a34a45fda
+        size: 69074128
         x-checker-data:
           type: debian-repo
           package-name: code
@@ -113,9 +101,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [aarch64]
-        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.52.1-1608136325_arm64.deb
-        sha256: af05fb9d7c9a86d6653fffc9fbe46c3d8b9be8195d85ae9529e9e5fd89bd2ddc
-        size: 64631738
+        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.53.0-1612367976_arm64.deb
+        sha256: 7b8c2bf354b6dc135cc1759c58326b811af99095f7fc78112146c663f2fd8cb9
+        size: 68418146
         x-checker-data:
           type: debian-repo
           package-name: code

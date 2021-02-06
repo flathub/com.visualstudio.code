@@ -1,4 +1,4 @@
 {
-  "only-arches": ["aarch64", "arm", "x86_64"],
+  "only-arches": ["aarch64", "x86_64"],
   "automerge-flathubbot-prs": true
 }
