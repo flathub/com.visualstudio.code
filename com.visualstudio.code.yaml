@@ -67,7 +67,7 @@ modules:
           - ar x code.deb
           - tar xf data.tar.xz
           - mv usr/share/code vscode
-          - rm -r code.deb control.tar.xz data.tar.xz debian-binary usr
+          - rm -r code.deb control.tar.* data.tar.xz debian-binary usr
       - type: file
         path: code.sh
       - type: file
