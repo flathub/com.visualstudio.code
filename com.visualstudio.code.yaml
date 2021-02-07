@@ -67,7 +67,7 @@ modules:
           - ar x code.deb
           - tar xf data.tar.xz
           - mv usr/share/code vscode
-          - rm -r code.deb control.tar.xz data.tar.xz debian-binary usr
+          - rm -r code.deb control.tar.* data.tar.xz debian-binary usr
       - type: file
         path: code.sh
       - type: file
@@ -95,6 +95,18 @@ modules:
         x-checker-data:
           type: debian-repo
           package-name: code
-          root: http://packages.microsoft.com/repos/vscode
+          root: http://packages.microsoft.com/repos/code
+          dist: stable
+          component: main
+      - type: extra-data
+        filename: code.deb
+        only-arches: [aarch64]
+        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.53.0-1612367976_arm64.deb
+        sha256: 7b8c2bf354b6dc135cc1759c58326b811af99095f7fc78112146c663f2fd8cb9
+        size: 68418146
+        x-checker-data:
+          type: debian-repo
+          package-name: code
+          root: http://packages.microsoft.com/repos/code
           dist: stable
           component: main
