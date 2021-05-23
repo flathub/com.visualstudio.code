@@ -6,6 +6,8 @@
   <name>Visual Studio Code</name>
   <developer_name>Microsoft</developer_name>
   <url type="homepage">https://code.visualstudio.com</url>
+  <url type="bugtracker">https://github.com/microsoft/vscode/issues</url>
+  <url type="help">https://code.visualstudio.com/docs</url>
   <summary>Visual Studio Code. Code editing. Redefined.</summary>
   <description>
     <p>Visual Studio Code is a new choice of tool that combines the simplicity of a code editor with what developers need for the core edit-build-debug cycle.</p>
