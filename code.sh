@@ -60,5 +60,10 @@ for i in "${SDK[@]}"; do
   fi
 done
 
+# https://marketplace.visualstudio.com/items?itemName=icrawl.discord-vscode
+for i in {0..9}; do
+    test -S $XDG_RUNTIME_DIR/discord-ipc-$i || ln -sf {app/com.discordapp.Discord,$XDG_RUNTIME_DIR}/discord-ipc-$i;
+done
+
 exec env PATH="${PATH}:${XDG_DATA_HOME}/node_modules/bin" \
   /app/extra/vscode/bin/code --extensions-dir=${XDG_DATA_HOME}/vscode/extensions "$@" ${WARNING_FILE}
