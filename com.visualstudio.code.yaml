@@ -54,6 +54,7 @@ modules:
       - install -Dm644 com.visualstudio.code.desktop -t /app/share/applications
       - install -Dm644 npmrc -t /app/etc
       - install -Dm644 flatpak-warning.txt -t /app/share/vscode
+      - install -Dm644 settings.json -t /app/share/vscode
       - install -D apply_extra -t /app/bin
       - cp /usr/bin/ar /app/bin
       - ARCH_TRIPLE=$(gcc --print-multiarch) && cp /usr/lib/${ARCH_TRIPLE}/libbfd-*.so
@@ -72,6 +73,8 @@ modules:
         path: code.sh
       - type: file
         path: flatpak-warning.txt
+      - type: file
+        path: settings.json
       - type: file
         path: npmrc
       - type: file

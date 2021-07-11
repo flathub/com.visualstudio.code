@@ -4,6 +4,7 @@ set -e
 shopt -s nullglob
 
 FIRST_RUN="${XDG_CONFIG_HOME}/flatpak-vscode-first-run"
+SETTINGS_FILE="${XDG_CONFIG_HOME}/Code/User/settings.json"
 
 function msg() {
   echo "flatpak-vscode: $*" >&2
@@ -12,6 +13,14 @@ function msg() {
 if [ ! -f ${FIRST_RUN} ]; then
   WARNING_FILE="/app/share/vscode/flatpak-warning.txt"
   touch ${FIRST_RUN}
+
+  SETTINGS_TEMPLATE_FILE="/app/share/vscode/settings.json"
+  mkdir -p "$(dirname "${SETTINGS_FILE}")"
+  touch ${SETTINGS_FILE}
+  (
+  export FIRST_MONO_FONT=$(fc-list :mono | awk -F: '{print $2}' | sort -u | head -n 1 | xargs);
+  envsubst < "${SETTINGS_TEMPLATE_FILE}" > "${SETTINGS_FILE}"
+  )
 fi
 
 PYTHON_SITEDIR=$(python3 <<EOFPYTHON
