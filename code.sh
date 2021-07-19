@@ -61,4 +61,4 @@ for i in "${SDK[@]}"; do
 done
 
 exec env PATH="${PATH}:${XDG_DATA_HOME}/node_modules/bin" \
-  /app/bin/code --extensions-dir=${XDG_DATA_HOME}/vscode/extensions "$@" ${WARNING_FILE}
+  /app/bin/zypak-wrapper.sh /app/extra/code "$@" --extensions-dir=${XDG_DATA_HOME}/vscode/extensions "$@" ${WARNING_FILE}
