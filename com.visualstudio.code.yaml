@@ -54,6 +54,8 @@ modules:
       - install -Dm644 vscode_512.png /app/share/icons/hicolor/512x512/apps/com.visualstudio.code.png
       - install -Dm644 com.visualstudio.code.metainfo.xml -t /app/share/metainfo
       - install -Dm644 com.visualstudio.code.desktop -t /app/share/applications
+      - install -Dm644 com.visualstudio.code-url-handler.desktop -t /app/share/applications
+      - install -Dm644 com.visualstudio.code-workspace.xml -t /app/share/mime/packages
       - install -Dm644 npmrc -t /app/etc
       - install -Dm644 flatpak-warning.txt -t /app/share/vscode
       - install -D apply_extra -t /app/bin
@@ -80,6 +82,10 @@ modules:
         path: com.visualstudio.code.metainfo.xml
       - type: file
         path: com.visualstudio.code.desktop
+      - type: file
+        path: com.visualstudio.code-url-handler.desktop
+      - type: file
+        path: com.visualstudio.code-workspace.xml
       - type: file
         path: icons/vscode_64.png
       - type: file
