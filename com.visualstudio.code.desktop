@@ -8,7 +8,7 @@ Type=Application
 StartupNotify=true
 StartupWMClass=Code
 Categories=TextEditor;Development;IDE;
-MimeType=text/plain;inode/directory;x-scheme-handler/vscode
+MimeType=text/plain;inode/directory;application/x-code-workspace;
 Actions=new-empty-window;
 Keywords=vscode;
 
