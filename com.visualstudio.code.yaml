@@ -106,15 +106,3 @@ modules:
           root: http://packages.microsoft.com/repos/code
           dist: stable
           component: main
-      - type: extra-data
-        filename: code.deb
-        only-arches: [aarch64]
-        url: http://packages.microsoft.com/repos/code/pool/main/c/code/code_1.58.2-1626300392_arm64.deb
-        sha256: 3a2d58938e97e47a344f166906fb8d7c45c238ec61406933d49b0bb70e29a30a
-        size: 76707070
-        x-checker-data:
-          type: debian-repo
-          package-name: code
-          root: http://packages.microsoft.com/repos/code
-          dist: stable
-          component: main
