@@ -64,4 +64,4 @@ export CHROME_WRAPPER=$(readlink -f "$0")
 export TMPDIR="$XDG_RUNTIME_DIR/app/$FLATPAK_ID"
 
 exec env PATH="${PATH}:${XDG_DATA_HOME}/node_modules/bin" \
-  /app/bin/zypak-wrapper.sh /app/extra/code "$@" --extensions-dir=${XDG_DATA_HOME}/vscode/extensions "$@" ${WARNING_FILE}
+  /app/bin/zypak-wrapper.sh /app/extra/code /app/extra/resources/app/out/cli.js "$@" --extensions-dir=${XDG_DATA_HOME}/vscode/extensions "$@" ${WARNING_FILE}
