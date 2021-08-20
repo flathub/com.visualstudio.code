@@ -22,6 +22,22 @@
     <content_attribute id="social-info">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.59.1-1629374148" date="2021-08-19">
+Release highlights:
+- Extensions view improvements - Rich extension detail hovers, new runtime status tab.
+- Settings editor validation - Quickly find editing errors for object-based settings.
+- Drag and drop terminals - Move terminals across windows to both editor and panel areas.
+- Extended theme customization - Customize multiple color themes at once.
+- Built-in support for Jupyter notebooks - Open .ipynb files directly in VS Code.
+- Notebook UI improvements - Display first line of collapsed cells, Undo/Redo per cell.
+- Testing API finalized - Native support for running tests in VS Code with built-in Test Explorer.
+- Debug Disassembly view preview - Display disassembled C++ code in VS Code.
+- Live Preview extension - Live HTML preview within VS Code with JavaScript debugging support.
+- Remote - Containers devcontainer CLI - Command line interface for working with development containers.
+
+Release notes: https://code.visualstudio.com/updates/v1_59
+
+    </release>
     <release version="1.57.1-1623936438" date="2021-06-17"/>
     <release version="1.56.2-1620837933" date="2021-05-13"/>
     <release version="1.56.1-1620295664" date="2021-05-11"/>
