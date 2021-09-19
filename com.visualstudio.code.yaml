@@ -42,6 +42,16 @@ modules:
 
   - shared-modules/libsecret/libsecret.json
 
+  - name: zypak
+    sources:
+      - type: git
+        url: https://github.com/refi64/zypak
+        tag: v2021.09.1
+        commit: e09f37ca4ff09827434deba11f9b1f9e1c42dbaf
+        x-checker-data:
+          type: git
+          tag-pattern: ^v([\d.]+)$
+
   - name: vscode
     buildsystem: simple
     build-commands:
@@ -89,24 +99,24 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [x86_64]
-        url: http://packages.microsoft.com/repos/code/pool/main/c/code/code_1.57.1-1623937013_amd64.deb
-        sha256: a5a50ec014b27656c198e560796f3b41180f3bdb0c19f0005193f79ed47fc8b8
-        size: 76349788
+        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.60.1-1631294805_amd64.deb
+        sha256: 7606eabb7b38535d6533524876820ed5cdd9b56a47c9d953dd1f3ffcb4aaffbf
+        size: 75903744
         x-checker-data:
           type: debian-repo
           package-name: code
-          root: http://packages.microsoft.com/repos/code
+          root: https://packages.microsoft.com/repos/code
           dist: stable
           component: main
       - type: extra-data
         filename: code.deb
         only-arches: [aarch64]
-        url: http://packages.microsoft.com/repos/code/pool/main/c/code/code_1.57.1-1623936438_arm64.deb
-        sha256: ce23625da8a2399f5ab4f39b65747e0a9d3b9b0258c1d81ea5ceb58a6be6d96b
-        size: 75900590
+        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.60.1-1631293646_arm64.deb
+        sha256: 70b4f0b160a75b2c3bc687298f4ea7cc673a9f3d8f29979fc57ee7c77f1e9a0c
+        size: 74055780
         x-checker-data:
           type: debian-repo
           package-name: code
-          root: http://packages.microsoft.com/repos/code
+          root: https://packages.microsoft.com/repos/code
           dist: stable
           component: main
