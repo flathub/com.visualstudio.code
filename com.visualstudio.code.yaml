@@ -1,10 +1,10 @@
 app-id: com.visualstudio.code
 default-branch: stable
 runtime: org.freedesktop.Sdk
-runtime-version: '20.08'
+runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
 base: org.electronjs.Electron2.BaseApp
-base-version: '20.08'
+base-version: '21.08'
 command: code
 tags: [proprietary]
 desktop-file-name-suffix: ' (Flatpak)'
@@ -32,7 +32,7 @@ add-extensions:
   com.visualstudio.code.tool:
     directory: tools
     subdirectories: true
-    version: '20.08'
+    version: '21.08'
     add-ld-path: lib
     no-autodownload: true
 cleanup:
