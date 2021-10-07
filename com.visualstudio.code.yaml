@@ -97,9 +97,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [x86_64]
-        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.60.2-1632313585_amd64.deb
-        sha256: 5d14d85ee907045b0fdc00d02d5f0f2a4336d37747f52862ed64fd52f92dec5b
-        size: 75900200
+        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.61.0-1633631387_amd64.deb
+        sha256: 7499633e2cd1939a7f0f5c053b651f831c88ea470392d1b6f2b1220d30248535
+        size: 80780768
         x-checker-data:
           type: debian-repo
           package-name: code
@@ -109,9 +109,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [aarch64]
-        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.60.2-1632312033_arm64.deb
-        sha256: 3159c96c3be2fa11e5a2c8757941e967ece1c6225b597e8fa8ff0494edad072d
-        size: 74036054
+        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.61.0-1633630292_arm64.deb
+        sha256: d16e5857a3ff7409d11e9deaa64aac70547c5260fe8f1531ccb02d31e1605789
+        size: 74125024
         x-checker-data:
           type: debian-repo
           package-name: code
@@ -122,10 +122,10 @@ modules:
   - name: kerberos
     subdir: src
     post-install:
-    - install -Dm644 ../krb5.conf /app/etc/krb5.conf
+      - install -Dm644 ../krb5.conf /app/etc/krb5.conf
     sources:
-    - type: archive
-      url: https://kerberos.org/dist/krb5/1.19/krb5-1.19.2.tar.gz
-      sha256: 10453fee4e3a8f8ce6129059e5c050b8a65dab1c257df68b99b3112eaa0cdf6a
-    - type: file
-      path: krb5.conf
+      - type: archive
+        url: https://kerberos.org/dist/krb5/1.19/krb5-1.19.2.tar.gz
+        sha256: 10453fee4e3a8f8ce6129059e5c050b8a65dab1c257df68b99b3112eaa0cdf6a
+      - type: file
+        path: krb5.conf
