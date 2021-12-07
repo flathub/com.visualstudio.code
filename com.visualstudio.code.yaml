@@ -57,7 +57,12 @@ modules:
       - install -Dm644 com.visualstudio.code-url-handler.desktop -t /app/share/applications
       - install -Dm644 com.visualstudio.code-workspace.xml -t /app/share/mime/packages
       - install -Dm644 npmrc -t /app/etc
+
+      - gcc -shared -fPIC preload_readlink.c -o preload_readlink.so -ldl
+      - install -Dm755 preload_readlink.so -t /app/share/vscode
       - install -Dm644 flatpak-warning.txt -t /app/share/vscode
+      - install -Dm755 code_wrapper.sh -t /app/share/vscode
+
       - install -D apply_extra -t /app/bin
       - cp /usr/bin/ar /app/bin
       - ARCH_TRIPLE=$(gcc --print-multiarch) && cp /usr/lib/${ARCH_TRIPLE}/libbfd-*.so
@@ -71,11 +76,16 @@ modules:
           - ar x code.deb
           - tar xf data.tar.xz
           - mv usr/share/code vscode
+          - install -Dm755 /app/share/vscode/code_wrapper.sh vscode/code_wrapper
           - rm -r code.deb control.tar.* data.tar.xz debian-binary usr
       - type: file
         path: code.sh
       - type: file
         path: flatpak-warning.txt
+      - type: file
+        path: wrapper/preload_readlink.c
+      - type: file
+        path: wrapper/code_wrapper.sh
       - type: file
         path: npmrc
       - type: file

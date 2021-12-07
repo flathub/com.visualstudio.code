@@ -59,8 +59,7 @@ for i in "${SDK[@]}"; do
     msg "Requested SDK extension \"$i\" is not installed"
   fi
 done
-
-exec env ELECTRON_RUN_AS_NODE=1 PATH="${PATH}:${XDG_DATA_HOME}/node_modules/bin" \
-  /app/bin/zypak-wrapper.sh /app/extra/vscode/code /app/extra/vscode/resources/app/out/cli.js \
-  --ms-enable-electron-run-as-node --extensions-dir=${XDG_DATA_HOME}/vscode/extensions \
+export PATH="${PATH}:${XDG_DATA_HOME}/node_modules/bin" 
+exec env LD_PRELOAD=/app/share/vscode/preload_readlink.so \
+  /app/extra/vscode/bin/code --extensions-dir=${XDG_DATA_HOME}/vscode/extensions \
   "$@" ${WARNING_FILE}
