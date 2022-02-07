@@ -17,6 +17,7 @@ finish-args:
   - --socket=ssh-auth
   - --share=network
   - --device=all
+  - --filesystem=xdg-config/gtk-3.0
   - --filesystem=host
   - --allow=devel
   - --talk-name=org.freedesktop.Notifications
