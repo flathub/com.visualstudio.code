@@ -1,8 +1,10 @@
 app-id: com.visualstudio.code
 default-branch: stable
 runtime: org.freedesktop.Sdk
-runtime-version: '20.08'
+runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
+base: org.electronjs.Electron2.BaseApp
+base-version: '21.08'
 command: code
 tags: [proprietary]
 desktop-file-name-suffix: ' (Flatpak)'
@@ -15,6 +17,7 @@ finish-args:
   - --socket=ssh-auth
   - --share=network
   - --device=all
+  - --filesystem=xdg-config/gtk-3.0
   - --filesystem=host
   - --allow=devel
   - --talk-name=org.freedesktop.Notifications
@@ -31,7 +34,7 @@ add-extensions:
   com.visualstudio.code.tool:
     directory: tools
     subdirectories: true
-    version: '20.08'
+    version: '21.08'
     add-ld-path: lib
     no-autodownload: true
 cleanup:
@@ -53,6 +56,8 @@ modules:
       - install -Dm644 vscode_512.png /app/share/icons/hicolor/512x512/apps/com.visualstudio.code.png
       - install -Dm644 com.visualstudio.code.metainfo.xml -t /app/share/metainfo
       - install -Dm644 com.visualstudio.code.desktop -t /app/share/applications
+      - install -Dm644 com.visualstudio.code-url-handler.desktop -t /app/share/applications
+      - install -Dm644 com.visualstudio.code-workspace.xml -t /app/share/mime/packages
       - install -Dm644 npmrc -t /app/etc
       - install -Dm644 flatpak-warning.txt -t /app/share/vscode
       - install -D apply_extra -t /app/bin
@@ -80,6 +85,10 @@ modules:
       - type: file
         path: com.visualstudio.code.desktop
       - type: file
+        path: com.visualstudio.code-url-handler.desktop
+      - type: file
+        path: com.visualstudio.code-workspace.xml
+      - type: file
         path: icons/vscode_64.png
       - type: file
         path: icons/vscode_128.png
@@ -90,24 +99,35 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [x86_64]
-        url: http://packages.microsoft.com/repos/code/pool/main/c/code/code_1.57.1-1623937013_amd64.deb
-        sha256: a5a50ec014b27656c198e560796f3b41180f3bdb0c19f0005193f79ed47fc8b8
-        size: 76349788
+        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.64.2-1644445741_amd64.deb
+        sha256: 2cd40f44554d7cc5cb0bd4550370a0a1098aa43b76980ee718a58e1ccf82254e
+        size: 79995968
         x-checker-data:
           type: debian-repo
           package-name: code
-          root: http://packages.microsoft.com/repos/code
+          root: https://packages.microsoft.com/repos/code
           dist: stable
           component: main
       - type: extra-data
         filename: code.deb
         only-arches: [aarch64]
-        url: http://packages.microsoft.com/repos/code/pool/main/c/code/code_1.57.1-1623936438_arm64.deb
-        sha256: ce23625da8a2399f5ab4f39b65747e0a9d3b9b0258c1d81ea5ceb58a6be6d96b
-        size: 75900590
+        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.64.2-1644444223_arm64.deb
+        sha256: e1e0f74291ea39aa1331933027b35b77b892156789bc5269525d7a790a8107dd
+        size: 72987268
         x-checker-data:
           type: debian-repo
           package-name: code
-          root: http://packages.microsoft.com/repos/code
+          root: https://packages.microsoft.com/repos/code
           dist: stable
           component: main
+
+  - name: kerberos
+    subdir: src
+    post-install:
+      - install -Dm644 ../krb5.conf /app/etc/krb5.conf
+    sources:
+      - type: archive
+        url: https://kerberos.org/dist/krb5/1.19/krb5-1.19.2.tar.gz
+        sha256: 10453fee4e3a8f8ce6129059e5c050b8a65dab1c257df68b99b3112eaa0cdf6a
+      - type: file
+        path: krb5.conf
