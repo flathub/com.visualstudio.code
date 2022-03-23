@@ -10,6 +10,8 @@
   <description>
     <p>Visual Studio Code is a new choice of tool that combines the simplicity of a code editor with what developers need for the core edit-build-debug cycle.</p>
     <p>This is the proprietary Microsoft build of Visual Studio Code, packaged into a Flatpak. This repackaging is not supported by Microsoft.</p>
+    <p>To install the code command, add this to your ~/.bashrc file:</p>
+    <p>alias code="flatpak run com.visualstudio.code"</p>
   </description>
   <screenshots>
     <screenshot type="default">
