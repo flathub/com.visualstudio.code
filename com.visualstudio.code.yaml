@@ -25,6 +25,7 @@ finish-args:
   - --talk-name=org.freedesktop.Flatpak
   - --env=NPM_CONFIG_GLOBALCONFIG=/app/etc/npmrc
   - --env=LD_LIBRARY_PATH=/app/lib
+  - --env=ZYPAK_SPAWN_LATEST_ON_REEXEC=0
   - --filesystem=xdg-config/kdeglobals:ro
   - --talk-name=com.canonical.AppMenu.Registrar
   - --talk-name=com.canonical.AppMenu.Registrar.*
@@ -130,3 +131,10 @@ modules:
         sha256: 10453fee4e3a8f8ce6129059e5c050b8a65dab1c257df68b99b3112eaa0cdf6a
       - type: file
         path: krb5.conf
+
+  - name: zypak
+    sources:
+      - type: git
+        url: https://github.com/refi64/zypak
+        tag: v2022.03
+        commit: 8424c6bcf909ca2031ebc6537d324bb64772266e
