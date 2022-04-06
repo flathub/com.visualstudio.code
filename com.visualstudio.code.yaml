@@ -107,6 +107,8 @@ modules:
           root: https://packages.microsoft.com/repos/code
           dist: stable
           component: main
+          is-main-source: true
+
       - type: extra-data
         filename: code.deb
         only-arches: [aarch64]
