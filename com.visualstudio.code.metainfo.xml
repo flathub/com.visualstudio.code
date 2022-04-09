@@ -22,6 +22,24 @@
     <content_attribute id="social-info">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.66.1" date="2022-04-07"/>
+    <release version="1.66.0" date="2022-03-29"/>
+    <release version="1.65.2" date="2022-03-10"/>
+    <release version="1.65.1" date="2022-03-08"/>
+    <release version="1.65.0" date="2022-03-02"/>
+    <release version="1.64.2" date="2022-02-10"/>
+    <release version="1.64.1" date="2022-02-07"/>
+    <release version="1.64.0" date="2022-02-02"/>
+    <release version="1.63.2" date="2021-12-15"/>
+    <release version="1.63.1" date="2021-12-14"/>
+    <release version="1.63.0" date="2021-12-09"/>
+    <release version="1.62.3" date="2021-11-19"/>
+    <release version="1.62.2" date="2021-11-12"/>
+    <release version="1.62.1" date="2021-11-05"/>
+    <release version="1.62.0" date="2021-11-04"/>
+    <release version="1.61.2" date="2021-10-19"/>
+    <release version="1.61.1" date="2021-10-14"/>
+    <release version="1.61.0" date="2021-10-08"/>
     <release version="1.60.2" date="2021-09-22"/>
     <release version="1.60.1" date="2021-09-14"/>
     <release version="1.57.1-1623936438" date="2021-06-17"/>
