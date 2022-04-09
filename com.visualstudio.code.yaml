@@ -27,6 +27,7 @@ finish-args:
   - --env=LD_LIBRARY_PATH=/app/lib
   - --env=ZYPAK_SPAWN_LATEST_ON_REEXEC=0
   - --filesystem=xdg-config/kdeglobals:ro
+  - --filesystem=xdg-run/app/com.discordapp.Discord:create
   - --talk-name=com.canonical.AppMenu.Registrar
   - --talk-name=com.canonical.AppMenu.Registrar.*
   - --system-talk-name=org.freedesktop.login1
