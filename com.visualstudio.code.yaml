@@ -46,6 +46,8 @@ modules:
 
   - shared-modules/libsecret/libsecret.json
 
+  - shared-modules/libusb/libusb.json
+
   - name: vscode
     buildsystem: simple
     build-commands:
