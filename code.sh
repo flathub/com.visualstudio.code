@@ -60,6 +60,10 @@ for i in "${SDK[@]}"; do
   fi
 done
 
+if [ ! -e /etc/shells ] && [ -e /var/run/host/etc/shells ]; then
+  ln -s /var/run/host/etc/shells /etc/shells
+fi
+
 exec env ELECTRON_RUN_AS_NODE=1 PATH="${PATH}:${XDG_DATA_HOME}/node_modules/bin" \
   /app/bin/zypak-wrapper.sh /app/extra/vscode/code /app/extra/vscode/resources/app/out/cli.js \
   --ms-enable-electron-run-as-node --extensions-dir=${XDG_DATA_HOME}/vscode/extensions \
