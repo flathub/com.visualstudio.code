@@ -7,7 +7,6 @@ base: org.electronjs.Electron2.BaseApp
 base-version: '21.08'
 command: code
 tags: [proprietary]
-desktop-file-name-suffix: ' (Flatpak)'
 separate-locales: false
 finish-args:
   - --require-version=0.10.3
