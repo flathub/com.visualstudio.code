@@ -1,7 +1,78 @@
-# Visual Studio Code Flatpak
+# Visual Studio Code Flatpak <!-- omit in toc -->
+
+
+| Warning: You are running an unofficial Flatpak version of Visual Studio Code !!!<!-- omit in toc --> | 
+------------------------------------------------------------------------------------
 
 This is an unofficial build of Visual Studio Code, generated from the official Microsoft-built .deb packages [here](https://github.com/flathub/com.visualstudio.code/blob/master/com.visualstudio.code.yaml#L103).
 
-Most functionality works out of the box, though please note:
-* To make the Integrated Terminal automatically use the host system's shell, you can will need to add this command in [Flatpak Warning.txt](https://github.com/flathub/com.visualstudio.code/blob/master/flatpak-warning.txt#L22-L30)
-* To gain support for additional languages, you will need to follow the commands in [Flatpak Warning.txt](https://github.com/flathub/com.visualstudio.code/blob/master/flatpak-warning.txt#L41-L43)
+## Table of Contents <!-- omit in toc -->
+
+- [Usage](#usage)
+  - [Execute commands in the host system.](#execute-commands-in-the-host-system)
+  - [Use host shell in the integrated terminal.](#use-host-shell-in-the-integrated-terminal)
+  - [Support for language extension.](#support-for-language-extension)
+- [Support](#support)
+
+
+## Usage
+
+Most functionality works out of the box, though please note that flatpak runs in an isolated environment and some work is necessary to enable those features.
+
+
+### Execute commands in the host system.
+
+To execute commands on the host system, run inside the sandbox:
+
+`$ flatpak-spawn --host <COMMAND>`
+
+### Use host shell in the integrated terminal.
+
+Another option to execute commands is to use your host shell in the integrated terminal instead of the sandbox one.
+
+For that go to `File -> Preferences -> Settings` and find `Terminal > Integrated > Profiles`, then click on `Edit in settings.json` (The important thing here is to open settings.json)
+
+And make sure that you have the following lines there
+
+```
+{
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "/usr/bin/flatpak-spawn",
+      "args": ["--host", "--env=TERM=xterm-256color", "bash"]
+    }
+  }
+}
+```
+* You can change **bash** to any terminal you are using: zsh, fish, sh.
+
+### Support for language extension.
+
+Some visual studio extension depends on packages that might exist on your host, but they are not accessible thought Flatpak. Like support to programing languages: gcc, python, etc..
+
+**To see what's available:**
+
+```
+  flatpak run --command=sh com.visualstudio.code
+  ls /usr/bin (shared runtime)
+  ls /app/bin (bundled with this flatpak)
+```
+
+**To get support for additional languages, you have to install SDK extensions, e.g.**
+
+```
+flatpak install flathub org.freedesktop.Sdk.Extension.dotnet
+flatpak install flathub org.freedesktop.Sdk.Extension.golang
+FLATPAK_ENABLE_SDK_EXT=dotnet,golang flatpak run com.visualstudio.code
+```
+
+**To find others**
+
+`flatpak search <TEXT>`
+
+
+
+## Support
+
+Please open issues under: https://github.com/flathub/com.visualstudio.code/issues
