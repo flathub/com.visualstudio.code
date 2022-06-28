@@ -49,7 +49,7 @@ And make sure that you have the following lines there
 
 ### Support for language extension.
 
-Some visual studio extension depends on packages that might exist on your host, but they are not accessible thought Flatpak. Like support to programing languages: gcc, python, etc..
+Some Visual Studio extension depends on packages that might exist on your host, but they are not accessible thought Flatpak. Like support to programming languages: gcc, python, etc..
 
 **To see what's available:**
 
