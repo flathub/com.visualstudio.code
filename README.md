@@ -51,7 +51,7 @@ And make sure that you have the following lines there
 
 Some Visual Studio extension depends on packages that might exist on your host, but they are not accessible thought Flatpak. Like support to programming languages: gcc, python, etc..
 
-**To see what's available:**
+**See available SDK:**
 
 ```
   flatpak run --command=sh com.visualstudio.code
@@ -59,7 +59,7 @@ Some Visual Studio extension depends on packages that might exist on your host, 
   ls /app/bin (bundled with this flatpak)
 ```
 
-**To get support for additional languages, you have to install SDK extensions, e.g.**
+**Get support for additional languages, you have to install SDK extensions, e.g.**
 
 ```
 flatpak install flathub org.freedesktop.Sdk.Extension.dotnet
@@ -67,7 +67,7 @@ flatpak install flathub org.freedesktop.Sdk.Extension.golang
 FLATPAK_ENABLE_SDK_EXT=dotnet,golang flatpak run com.visualstudio.code
 ```
 
-**To find others**
+**Finding other SDK**
 
 `flatpak search <TEXT>`
 
