@@ -59,7 +59,7 @@ Some Visual Studio extension depends on packages that might exist on your host, 
   ls /app/bin (bundled with this flatpak)
 ```
 
-**Get support for additional languages, you have to install SDK extensions, e.g.**
+**Getting support for additional languages, you have to install SDK extensions, e.g.**
 
 ```
 flatpak install flathub org.freedesktop.Sdk.Extension.dotnet
