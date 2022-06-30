@@ -1,9 +1,7 @@
 # Visual Studio Code Flatpak <!-- omit in toc -->
 
 
-| Warning: You are running an unofficial Flatpak version of Visual Studio Code !!!<!-- omit in toc --> | 
-
-This is an unofficial build of Visual Studio Code, generated from the official Microsoft-built .deb packages [here](https://github.com/flathub/com.visualstudio.code/blob/master/com.visualstudio.code.yaml#L103).
+🚨 Warning: You are running an unofficial Flatpak version of Visual Studio Code !!! This is an unofficial build of Visual Studio Code, generated from the official Microsoft-built .deb packages [here](https://github.com/flathub/com.visualstudio.code/blob/master/com.visualstudio.code.yaml#L103).
 
 ## Table of Contents <!-- omit in toc -->
 
