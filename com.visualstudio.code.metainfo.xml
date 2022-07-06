@@ -8,8 +8,9 @@
   <url type="homepage">https://code.visualstudio.com</url>
   <summary>Visual Studio Code. Code editing. Redefined.</summary>
   <description>
-    <p>Visual Studio Code is a new choice of tool that combines the simplicity of a code editor with what developers need for the core edit-build-debug cycle.</p>
+    <p>IMPORTANT: To use certain features (like the integrated shell) in this flatpacked version, you will need to <a href="https://github.com/flathub/com.visualstudio.code#visual-studio-code-flatpak-">follow the quick README here</a>.</p>
     <p>This is the proprietary Microsoft build of Visual Studio Code, packaged into a Flatpak. This repackaging is not supported by Microsoft.</p>
+    <p>Visual Studio Code is a new choice of tool that combines the simplicity of a code editor with what developers need for the core edit-build-debug cycle.</p>
   </description>
   <screenshots>
     <screenshot type="default">
