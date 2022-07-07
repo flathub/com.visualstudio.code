@@ -1,9 +1,9 @@
-# Visual Studio Code Flatpak <!-- omit in toc -->
+# Visual Studio Code Flatpak<!-- omit in toc -->
 
 
 🚨 Warning: This is an unofficial Flatpak build of Visual Studio Code, generated from the official Microsoft-built .deb packages [here](https://github.com/flathub/com.visualstudio.code/blob/master/com.visualstudio.code.yaml#L103).
 
-## Table of Contents <!-- omit in toc -->
+## Table of Contents<!-- omit in toc -->
 
 - [Usage](#usage)
   - [Execute commands in the host system.](#execute-commands-in-the-host-system)
