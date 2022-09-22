@@ -1,10 +1,10 @@
 app-id: com.visualstudio.code
 default-branch: stable
 runtime: org.freedesktop.Sdk
-runtime-version: '21.08'
+runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
 base: org.electronjs.Electron2.BaseApp
-base-version: '21.08'
+base-version: '22.08'
 command: code
 tags: [proprietary]
 separate-locales: false
@@ -33,7 +33,7 @@ add-extensions:
   com.visualstudio.code.tool:
     directory: tools
     subdirectories: true
-    version: '21.08'
+    version: '22.08'
     add-ld-path: lib
     no-autodownload: true
 cleanup:
@@ -130,8 +130,8 @@ modules:
       - install -Dm644 ../krb5.conf /app/etc/krb5.conf
     sources:
       - type: archive
-        url: https://kerberos.org/dist/krb5/1.19/krb5-1.19.2.tar.gz
-        sha256: 10453fee4e3a8f8ce6129059e5c050b8a65dab1c257df68b99b3112eaa0cdf6a
+        url: https://kerberos.org/dist/krb5/1.20/krb5-1.20.tar.gz
+        sha256: 7e022bdd3c851830173f9faaa006a230a0e0fdad4c953e85bff4bf0da036e12f
       - type: file
         path: krb5.conf
 
@@ -139,5 +139,5 @@ modules:
     sources:
       - type: git
         url: https://github.com/refi64/zypak
-        tag: v2022.03
-        commit: 8424c6bcf909ca2031ebc6537d324bb64772266e
+        tag: v2022.04
+        commit: 55a60d110301e8dd37b631503c3524ab7baaf7aa
