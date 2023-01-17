@@ -12,6 +12,7 @@ finish-args:
   - --require-version=0.10.3
   - --share=ipc
   - --socket=x11
+  - --socket=wayland
   - --socket=pulseaudio
   - --socket=ssh-auth
   - --share=network
