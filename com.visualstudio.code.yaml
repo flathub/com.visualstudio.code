@@ -135,6 +135,22 @@ modules:
       - type: file
         path: krb5.conf
 
+  - name: host-spawn
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 host-spawn /app/bin/host-spawn
+    sources: 
+      - type: file 
+        url: https://github.com/1player/host-spawn/releases/download/1.4.0/host-spawn-x86_64
+        sha256: 58376355681d673f310566145e05675fce6e51468d2737c1cafd9500e0b6bbcd
+        dest-filename: host-spawn
+        only-arches: [x86_64]
+      - type: file 
+        url: https://github.com/1player/host-spawn/releases/download/1.4.0/host-spawn-aarch64
+        sha256: 34aee99088117166abc30b8dbcfbc2f1e3dff4b669858373c15e8337a1808f1f
+        dest-filename: host-spawn
+        only-arches: [aarch64]
+
   - name: zypak
     sources:
       - type: git
