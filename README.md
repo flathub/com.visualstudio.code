@@ -64,6 +64,13 @@ flatpak install flathub org.freedesktop.Sdk.Extension.golang
 FLATPAK_ENABLE_SDK_EXT=dotnet,golang flatpak run com.visualstudio.code
 ```
 
+Select the language branch that matches the org.freedesktop.Sdk branch.
+To view the current versions installed:
+
+```
+flatpak list
+```
+
 **Finding other SDK**
 
 `flatpak search <TEXT>`
