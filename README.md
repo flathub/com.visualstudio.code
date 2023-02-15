@@ -42,7 +42,9 @@ And make sure that you have the following lines there
   }
 }
 ```
-* You can change **bash** to any terminal you are using: zsh, fish, sh.
+* You can change **bash** to any terminal you are using: zsh, sh.
+ 
+**Note**: For **fish**, install `com.visualstudio.code.tool.fish` and use the built-in profile (see terminal.integrated.defaultProfile.linux` in Settings)
 
 ### Support for language extension.
 
