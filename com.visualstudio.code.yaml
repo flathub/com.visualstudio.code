@@ -100,9 +100,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [x86_64]
-        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.81.1-1691620686_amd64.deb
-        sha256: a9a04b78c92354384387c0d2d7b422d33d08564d139958641f4d052b7f76a13a
-        size: 96329592
+        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.82.2-1694671812_amd64.deb
+        sha256: 9ba14d46cdb156b415e129c25a3d2eae6f7208914ee3633d33e2f2a2f1d8ec77
+        size: 95601154
         x-checker-data:
           type: debian-repo
           package-name: code
@@ -114,9 +114,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [aarch64]
-        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.81.1-1691620868_arm64.deb
-        sha256: 0f4b52658afd6e6b77c5ceb4e045fcadbd183e74c9635d0e92686cf0e9e95277
-        size: 89063516
+        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.82.2-1694671436_arm64.deb
+        sha256: 09932d2b55c169bb1cf7b10b47755dafd2ba6c61297f159249cb78a89d5fbf40
+        size: 88368302
         x-checker-data:
           type: debian-repo
           package-name: code
@@ -139,13 +139,13 @@ modules:
     buildsystem: simple
     build-commands:
       - install -Dm755 host-spawn /app/bin/host-spawn
-    sources: 
-      - type: file 
+    sources:
+      - type: file
         url: https://github.com/1player/host-spawn/releases/download/1.4.1/host-spawn-x86_64
         sha256: d81bb6125ec73a9a2e26266c48787367fbcb665d67c2e7fb42217f0981106cf7
         dest-filename: host-spawn
         only-arches: [x86_64]
-      - type: file 
+      - type: file
         url: https://github.com/1player/host-spawn/releases/download/1.4.1/host-spawn-aarch64
         sha256: 29bff846d72e37093b3fdf7859bae16addd64acc98087f8c059548df3c2273c4
         dest-filename: host-spawn
