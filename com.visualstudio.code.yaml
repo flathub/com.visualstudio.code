@@ -100,9 +100,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [x86_64]
-        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.84.0-1698839401_amd64.deb
-        sha256: dd34521f6f7b9084ab61138f3a3e2b32188645271afdcb0df0117fa6025686dd
-        size: 95597630
+        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.84.1-1699275408_amd64.deb
+        sha256: df2072cf87e7a71b208eb90022b53e05923343ca12efc49fa9ef53f2bc3a784e
+        size: 95604114
         x-checker-data:
           type: debian-repo
           package-name: code
