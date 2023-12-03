@@ -100,9 +100,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [x86_64]
-        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.82.2-1694671812_amd64.deb
-        sha256: 9ba14d46cdb156b415e129c25a3d2eae6f7208914ee3633d33e2f2a2f1d8ec77
-        size: 95601154
+        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.84.2-1699528352_amd64.deb
+        sha256: 4c11a2912d0f1054b2088fa8e86b7cce6bfee4d8ef700e1750cd0ac997d19c39
+        size: 95602006
         x-checker-data:
           type: debian-repo
           package-name: code
@@ -114,9 +114,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [aarch64]
-        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.82.2-1694671436_arm64.deb
-        sha256: 09932d2b55c169bb1cf7b10b47755dafd2ba6c61297f159249cb78a89d5fbf40
-        size: 88368302
+        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.84.2-1699527205_arm64.deb
+        sha256: b3b6130f02dfcc6372646efbe81a48d3f962daa3229b9c44b07848366e53a3d0
+        size: 89130478
         x-checker-data:
           type: debian-repo
           package-name: code
@@ -141,13 +141,13 @@ modules:
       - install -Dm755 host-spawn /app/bin/host-spawn
     sources:
       - type: file
-        url: https://github.com/1player/host-spawn/releases/download/1.4.1/host-spawn-x86_64
-        sha256: d81bb6125ec73a9a2e26266c48787367fbcb665d67c2e7fb42217f0981106cf7
+        url: https://github.com/1player/host-spawn/releases/download/1.5.0/host-spawn-x86_64
+        sha256: dbf67e7e111c4fe1edb0c642cbb4193064ca5b384aeb1054fc2befba6ed88b83
         dest-filename: host-spawn
         only-arches: [x86_64]
       - type: file
-        url: https://github.com/1player/host-spawn/releases/download/1.4.1/host-spawn-aarch64
-        sha256: 29bff846d72e37093b3fdf7859bae16addd64acc98087f8c059548df3c2273c4
+        url: https://github.com/1player/host-spawn/releases/download/1.5.0/host-spawn-aarch64
+        sha256: c42c12be6cdd83e374b847bec836659fb45231215797777c9ee1c9c0ae9e3783
         dest-filename: host-spawn
         only-arches: [aarch64]
 

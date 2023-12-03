@@ -42,7 +42,7 @@ And make sure that you have the following lines there:
   "terminal.integrated.profiles.linux": {
     "bash": {
       "path": "/usr/bin/flatpak-spawn",
-      "args": ["--host", "--env=TERM=xterm-256color", "bash"]
+      "args": ["--host", "--env=TERM=xterm-256color", "bash"],
       "icon": "terminal-bash",
       "overrideName": true
     }
