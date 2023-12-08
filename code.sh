@@ -60,13 +60,15 @@ for i in "${SDK[@]}"; do
   fi
 done
 
-if [ ! -e /etc/shells ] && [ -e /var/run/host/etc/shells ]; then
-  ln -s /var/run/host/etc/shells /etc/shells
+# Create /etc/static/shells before than /etc/shells, because /etc/shells ls linkd etc/static/shells
+# when use nixos is default has't /etc/static/shells
+if [ ! -f /etc/static/shells ]; then
+  mkdir -p /etc/static/
+  printf '/usr/bin/%s\n' sh bash > /etc/static/shells
 fi
 
-if [ ! -e /etc/static/shells ] && [ -e /var/run/host/etc/static/shells ]; then
-  mkdir -p  /etc/static/
-  ln -s /var/run/host/etc/static/shells /etc/static/shells
+if [ ! -e /etc/shells ] && [ -e /var/run/host/etc/shells ]; then
+  ln -s /var/run/host/etc/shells /etc/shells
 fi
 
 exec env ELECTRON_RUN_AS_NODE=1 PATH="${PATH}:${XDG_DATA_HOME}/node_modules/bin" \
