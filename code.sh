@@ -65,6 +65,7 @@ if [ ! -e /etc/shells ] && [ -e /var/run/host/etc/shells ]; then
 fi
 
 if [ ! -e /etc/static/shells ] && [ -e /var/run/host/etc/static/shells ]; then
+  mkdir -p  /etc/static/
   ln -s /var/run/host/etc/static/shells /etc/static/shells
 fi
 
