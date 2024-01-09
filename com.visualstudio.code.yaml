@@ -18,8 +18,6 @@ finish-args:
   - --device=all
   - --allow=devel
   - --filesystem=host
-  - --filesystem=xdg-config/gtk-3.0:ro
-  - --filesystem=xdg-config/kdeglobals:ro
   - --env=NPM_CONFIG_GLOBALCONFIG=/app/etc/npmrc
   - --env=LD_LIBRARY_PATH=/app/lib
   - --env=ZYPAK_SPAWN_LATEST_ON_REEXEC=0
