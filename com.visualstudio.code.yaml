@@ -20,7 +20,6 @@ finish-args:
   - --filesystem=host
   - --env=NPM_CONFIG_GLOBALCONFIG=/app/etc/npmrc
   - --env=LD_LIBRARY_PATH=/app/lib
-  - --env=ZYPAK_SPAWN_LATEST_ON_REEXEC=0
   - --system-talk-name=org.freedesktop.login1
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.freedesktop.secrets
