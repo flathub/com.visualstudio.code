@@ -98,9 +98,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [x86_64]
-        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.85.2-1705561292_amd64.deb
-        sha256: 22680224b542f2966c66080845bef82e68740679ceb3ae54be959e19c16bd127
-        size: 95980966
+        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.86.1-1707298119_amd64.deb
+        sha256: cf049ac17201ad73a3f6a94c0602a3e1dfead53dc124eb1315a7721a6aeb3e95
+        size: 99761918
         x-checker-data:
           type: debian-repo
           package-name: code
@@ -112,9 +112,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [aarch64]
-        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.85.2-1705560689_arm64.deb
-        sha256: 402a93806390b265770bf4b685441043bc51a94055dda45688400af191b90e26
-        size: 89015590
+        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.86.1-1707296902_arm64.deb
+        sha256: d230c29d9280978e7e65ce3deec0475e1e6d821a348ed46e033886425843b82f
+        size: 92864122
         x-checker-data:
           type: debian-repo
           package-name: code
