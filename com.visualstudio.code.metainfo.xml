@@ -6,10 +6,11 @@
   <name>Visual Studio Code</name>
   <developer_name>Microsoft Corporation</developer_name>
   <url type="homepage">https://code.visualstudio.com</url>
+  <url type="help">https://github.com/flathub/com.visualstudio.code?tab=readme-ov-file#usage</url>
   <summary>Code editing. Redefined.</summary>
   <description>
     <p>Visual Studio Code is a new choice of tool that combines the simplicity of a code editor with what developers need for the core edit-build-debug cycle.</p>
-    <p>IMPORTANT: To use certain features in this flatpacked version (like the integrated terminal), please see https://github.com/flathub/com.visualstudio.code#readme</p>
+    <p>IMPORTANT: To use certain features in this flatpacked version (like the integrated terminal), please read the linked documentation.</p>
     <p>This is the proprietary Microsoft build of Visual Studio Code, packaged into a Flatpak. This repackaging is not supported by Microsoft.</p>
   </description>
   <screenshots>
