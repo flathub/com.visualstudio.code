@@ -21,6 +21,8 @@ finish-args:
   - --env=NPM_CONFIG_GLOBALCONFIG=/app/etc/npmrc
   - --env=LD_LIBRARY_PATH=/app/lib
   - --env=ZYPAK_SPAWN_LATEST_ON_REEXEC=0
+  # required to fix cursor scaling on wayland
+  - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
   - --system-talk-name=org.freedesktop.login1
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.freedesktop.secrets
@@ -98,9 +100,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [x86_64]
-        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.85.1-1702462158_amd64.deb
-        sha256: 128d32a123e3087ba254bd74f1d23971287147e76faeacd38c418ddfdeaf44b0
-        size: 95977850
+        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.86.2-1707854558_amd64.deb
+        sha256: 7874c27e80e9bb1902502b8b90906ac830251f57f8e247b39d298d3809c76bf6
+        size: 99776494
         x-checker-data:
           type: debian-repo
           package-name: code
@@ -112,9 +114,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [aarch64]
-        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.85.1-1702461056_arm64.deb
-        sha256: 5b32b1266478ad4d4fbc34a05f95d76f6d45fde5cf29786b17255a2dd632680a
-        size: 89001666
+        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.86.2-1707853305_arm64.deb
+        sha256: eca39b791b53fa1a6ce97cafbcd425a3f8ff77f59ebab33bfd1797d7babe1553
+        size: 92860238
         x-checker-data:
           type: debian-repo
           package-name: code
