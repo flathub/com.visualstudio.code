@@ -41,9 +41,6 @@ cleanup:
   - /share/gtk-doc
   - '*.la'
 modules:
-
-  - shared-modules/libsecret/libsecret.json
-
   - shared-modules/libusb/libusb.json
 
   - name: vscode
@@ -99,9 +96,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [x86_64]
-        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.86.2-1707854558_amd64.deb
-        sha256: 7874c27e80e9bb1902502b8b90906ac830251f57f8e247b39d298d3809c76bf6
-        size: 99776494
+        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.87.1-1709685762_amd64.deb
+        sha256: a72fafb29a729cae459aaa0006e97299bcd5cd32b9a6691dee380d78d8935bae
+        size: 99933638
         x-checker-data:
           type: json
           url: https://api.github.com/repos/microsoft/vscode/releases/latest
@@ -113,9 +110,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [aarch64]
-        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.86.2-1707853305_arm64.deb
-        sha256: eca39b791b53fa1a6ce97cafbcd425a3f8ff77f59ebab33bfd1797d7babe1553
-        size: 92860238
+        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.87.2-1709911730_arm64.deb
+        sha256: 80ec721ed5aacc13b45863e911b7263f2b417a95162be7899a6700442a721576
+        size: 92899934
         x-checker-data:
           type: json
           url: https://api.github.com/repos/microsoft/vscode/releases/latest
@@ -149,10 +146,3 @@ modules:
         sha256: c42c12be6cdd83e374b847bec836659fb45231215797777c9ee1c9c0ae9e3783
         dest-filename: host-spawn
         only-arches: [aarch64]
-
-  - name: zypak
-    sources:
-      - type: git
-        url: https://github.com/refi64/zypak
-        tag: v2024.01.17
-        commit: ded79a2f8a509adc21834b95a9892073d4a91fdc
