@@ -103,11 +103,11 @@ modules:
         sha256: 7874c27e80e9bb1902502b8b90906ac830251f57f8e247b39d298d3809c76bf6
         size: 99776494
         x-checker-data:
-          type: debian-repo
-          package-name: code
-          root: https://packages.microsoft.com/repos/code
-          dist: stable
-          component: main
+          type: json
+          url: https://api.github.com/repos/microsoft/vscode/releases/latest
+          version-query: .tag_name
+          timestamp-query: .published_at
+          url-query: '"https://update.code.visualstudio.com/" + $version + "/linux-deb-x64/stable"'
           is-main-source: true
 
       - type: extra-data
@@ -117,11 +117,11 @@ modules:
         sha256: eca39b791b53fa1a6ce97cafbcd425a3f8ff77f59ebab33bfd1797d7babe1553
         size: 92860238
         x-checker-data:
-          type: debian-repo
-          package-name: code
-          root: https://packages.microsoft.com/repos/code
-          dist: stable
-          component: main
+          type: json
+          url: https://api.github.com/repos/microsoft/vscode/releases/latest
+          version-query: .tag_name
+          timestamp-query: .published_at
+          url-query: '"https://update.code.visualstudio.com/" + $version + "/linux-deb-arm64/stable"'
 
   - name: kerberos
     subdir: src
