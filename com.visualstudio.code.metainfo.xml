@@ -24,8 +24,11 @@
     <content_attribute id="social-info">moderate</content_attribute>
   </content_rating>
   <releases>
-    <release version="1.90.2" date="2024-06-19">
+    <release version="1.91.0" date="2024-07-03">
       <description></description>
+    </release>
+    <release version="1.90.2" date="2024-06-19">
+      <description/>
     </release>
     <release version="1.90.1" date="2024-06-13">
       <description/>
