@@ -15,11 +15,6 @@ if [ ! -f ${FIRST_RUN} ]; then
   touch ${FIRST_RUN}
 fi
 
-if [ ! -f ${FIRST_RUN} ]; then
-  WARNING_FILE="/app/share/vscode/flatpak-warning.txt"
-  touch ${FIRST_RUN}
-fi
-
 if [[ $XDG_SESSION_TYPE == "wayland" && -e "$XDG_RUNTIME_DIR/$WAYLAND_DISPLAY" ]]
 then
     WAYLAND_OPTS="$WAYLAND_OPTS --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations,WebRTCPipeWireCapturer"
