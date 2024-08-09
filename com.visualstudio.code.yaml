@@ -1,5 +1,4 @@
 app-id: com.visualstudio.code
-default-branch: stable
 runtime: org.freedesktop.Sdk
 runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
@@ -96,9 +95,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [x86_64]
-        url: https://update.code.visualstudio.com/1.92.0/linux-deb-x64/stable
-        sha256: 52726a61fadce5b933b507c32c3e004b91ffea64e9f7edeb4350c23d4e80b3e3
-        size: 102531294
+        url: https://update.code.visualstudio.com/1.92.1/linux-deb-x64/stable
+        sha256: d0f161ec79145772445d5a14b15030592498aaafa59237a602d66f43653e5309
+        size: 102516458
         x-checker-data:
           type: json
           url: https://api.github.com/repos/microsoft/vscode/releases/latest
@@ -110,9 +109,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [aarch64]
-        url: https://update.code.visualstudio.com/1.92.0/linux-deb-arm64/stable
-        sha256: ecfc9f73de6029202f0010ddbc2113964dd635e3a901076dbfb3366b04c59cc6
-        size: 94805138
+        url: https://update.code.visualstudio.com/1.92.1/linux-deb-arm64/stable
+        sha256: 200e9be6cd02f62969c762919d9677e3e48ef321c73b9e1a85a43d06a43a099f
+        size: 94793538
         x-checker-data:
           type: json
           url: https://api.github.com/repos/microsoft/vscode/releases/latest
