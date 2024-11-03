@@ -64,7 +64,9 @@ if [ ! -e /etc/shells ] && [ -e /var/run/host/etc/shells ]; then
   ln -s /var/run/host/etc/shells /etc/shells
 fi
 
+WAYLAND_FLAGS="--ozone-platform-hint=auto"
+
 exec env ELECTRON_RUN_AS_NODE=1 PATH="${PATH}:${XDG_DATA_HOME}/node_modules/bin" \
   /app/bin/zypak-wrapper.sh /app/extra/vscode/code /app/extra/vscode/resources/app/out/cli.js \
   --ms-enable-electron-run-as-node --extensions-dir=${XDG_DATA_HOME}/vscode/extensions \
-  "$@" ${WARNING_FILE}
+  $WAYLAND_FLAGS "$@" ${WARNING_FILE}
