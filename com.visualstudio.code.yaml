@@ -67,9 +67,10 @@ modules:
         dest-filename: apply_extra
         commands:
           - ar x code.deb
-          - tar xf data.tar.xz
+          - DATA_TAR_NAME=$(ar t code.deb | grep data.tar | head -1)          
+          - tar xf ${DATA_TAR_NAME}
           - mv usr/share/code vscode
-          - rm -r code.deb control.tar.* data.tar.xz debian-binary usr
+          - rm -r code.deb control.tar.* ${DATA_TAR_NAME} debian-binary usr
       - type: file
         path: code.sh
       - type: file
