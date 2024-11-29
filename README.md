@@ -30,7 +30,7 @@ or
 
 Another option to execute commands is to use your host shell in the integrated terminal instead of the sandbox one.
 
-For that go to `File -> Preferences -> Settings` and find `Terminal > Integrated > Profiles`, then click on `Edit in settings.json` (The important thing here is to open settings.json)
+For that go to `File -> Preferences -> Settings` and find `Features > Terminal > Integrated > Profiles`, then click on `Edit in settings.json` (The important thing here is to open settings.json)
 
 And make sure that you have the following lines there:
 
@@ -53,13 +53,17 @@ And make sure that you have the following lines there:
 `host-spawn`
 
 ```
-    "terminal.integrated.defaultProfile.linux": "bash",
+{
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.profiles.linux": {
     "bash": {
       "path": "/app/bin/host-spawn",
       "args": ["bash"],
       "icon": "terminal-bash",
       "overrideName": true
-    },
+    }
+  }
+}
 ```
 
 - You can change **bash** to any terminal you are using: zsh, fish, sh.

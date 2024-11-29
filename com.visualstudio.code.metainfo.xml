@@ -6,10 +6,11 @@
   <name>Visual Studio Code</name>
   <developer_name>Microsoft Corporation</developer_name>
   <url type="homepage">https://code.visualstudio.com</url>
+  <url type="help">https://github.com/flathub/com.visualstudio.code?tab=readme-ov-file#usage</url>
   <summary>Code editing. Redefined.</summary>
   <description>
     <p>Visual Studio Code is a new choice of tool that combines the simplicity of a code editor with what developers need for the core edit-build-debug cycle.</p>
-    <p>IMPORTANT: To use certain features in this flatpacked version (like the integrated terminal), please see https://github.com/flathub/com.visualstudio.code#readme</p>
+    <p>IMPORTANT: To use certain features in this flatpacked version (like the integrated terminal), please read the linked documentation.</p>
     <p>This is the proprietary Microsoft build of Visual Studio Code, packaged into a Flatpak. This repackaging is not supported by Microsoft.</p>
   </description>
   <screenshots>
@@ -23,6 +24,50 @@
     <content_attribute id="social-info">moderate</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.95.3" date="2024-11-14">
+      <description></description>
+    </release>
+    <release version="1.95.1" date="2024-10-31">
+      <description/>
+    </release>
+    <release version="1.94.2" date="2024-10-10">
+      <description/>
+    </release>
+    <release version="1.94.0" date="2024-10-03">
+      <description/>
+    </release>
+    <release version="1.93.1" date="2024-09-12">
+      <description/>
+    </release>
+    <release version="1.93.0" date="2024-09-05">
+      <description/>
+    </release>
+    <release version="1.92.2" date="2024-08-15">
+      <description/>
+    </release>
+    <release version="1.92.1" date="2024-08-08">
+      <description/>
+    </release>
+    <release version="1.92.0" date="2024-08-01">
+      <description/>
+    </release>
+    <release version="1.91.1" date="2024-07-11">
+      <description/>
+    </release>
+    <release version="1.90.2" date="2024-06-19">
+      <description/>
+    </release>
+    <release version="1.90.1" date="2024-06-13">
+      <description/>
+    </release>
+    <release version="1.89.1" date="2024-05-09"/>
+    <release version="1.88.0" date="2024-04-04"/>
+    <release version="1.87.2" date="2024-03-12"/>
+    <release version="1.87.1-1709685762" date="2024-03-12"/>
+    <release version="1.86.2-1707854558" date="2024-02-15"/>
+    <release version="1.86.1-1707298119" date="2024-02-08"/>
+    <release version="1.85.2-1705561292" date="2024-01-18"/>
+    <release version="1.85.1-1702462158" date="2023-12-13"/>
     <release version="1.84.2-1699528352" date="2023-11-19"/>
     <release version="1.84.1-1699275408" date="2023-11-06"/>
     <release version="1.84.0-1698839401" date="2023-11-01"/>

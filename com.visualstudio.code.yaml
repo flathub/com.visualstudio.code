@@ -1,10 +1,9 @@
 app-id: com.visualstudio.code
-default-branch: stable
 runtime: org.freedesktop.Sdk
-runtime-version: '22.08'
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 base: org.electronjs.Electron2.BaseApp
-base-version: '22.08'
+base-version: '24.08'
 command: code
 tags: [proprietary]
 separate-locales: false
@@ -18,11 +17,10 @@ finish-args:
   - --device=all
   - --allow=devel
   - --filesystem=host
-  - --filesystem=xdg-config/gtk-3.0:ro
-  - --filesystem=xdg-config/kdeglobals:ro
   - --env=NPM_CONFIG_GLOBALCONFIG=/app/etc/npmrc
   - --env=LD_LIBRARY_PATH=/app/lib
-  - --env=ZYPAK_SPAWN_LATEST_ON_REEXEC=0
+  # required to fix cursor scaling on wayland
+  - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
   - --system-talk-name=org.freedesktop.login1
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.freedesktop.secrets
@@ -33,7 +31,7 @@ add-extensions:
   com.visualstudio.code.tool:
     directory: tools
     subdirectories: true
-    version: '22.08'
+    version: '24.08'
     add-ld-path: lib
     no-autodownload: true
 cleanup:
@@ -42,9 +40,6 @@ cleanup:
   - /share/gtk-doc
   - '*.la'
 modules:
-
-  - shared-modules/libsecret/libsecret.json
-
   - shared-modules/libusb/libusb.json
 
   - name: vscode
@@ -100,29 +95,29 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [x86_64]
-        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.84.2-1699528352_amd64.deb
-        sha256: 4c11a2912d0f1054b2088fa8e86b7cce6bfee4d8ef700e1750cd0ac997d19c39
-        size: 95602006
+        url: https://update.code.visualstudio.com/1.95.3/linux-deb-x64/stable
+        sha256: 176286acb16b5bad1f0431947c3fb17813c5a84ee85a3395c7620379a4a70086
+        size: 103735158
         x-checker-data:
-          type: debian-repo
-          package-name: code
-          root: https://packages.microsoft.com/repos/code
-          dist: stable
-          component: main
+          type: json
+          url: https://api.github.com/repos/microsoft/vscode/releases/latest
+          version-query: .tag_name
+          timestamp-query: .published_at
+          url-query: '"https://update.code.visualstudio.com/" + $version + "/linux-deb-x64/stable"'
           is-main-source: true
 
       - type: extra-data
         filename: code.deb
         only-arches: [aarch64]
-        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.84.2-1699527205_arm64.deb
-        sha256: b3b6130f02dfcc6372646efbe81a48d3f962daa3229b9c44b07848366e53a3d0
-        size: 89130478
+        url: https://update.code.visualstudio.com/1.95.3/linux-deb-arm64/stable
+        sha256: 61267026ad435efff9c67703652b18a25906b8878b8fb8d87ad3260632e07489
+        size: 96299278
         x-checker-data:
-          type: debian-repo
-          package-name: code
-          root: https://packages.microsoft.com/repos/code
-          dist: stable
-          component: main
+          type: json
+          url: https://api.github.com/repos/microsoft/vscode/releases/latest
+          version-query: .tag_name
+          timestamp-query: .published_at
+          url-query: '"https://update.code.visualstudio.com/" + $version + "/linux-deb-arm64/stable"'
 
   - name: kerberos
     subdir: src
@@ -151,10 +146,3 @@ modules:
         sha256: c42c12be6cdd83e374b847bec836659fb45231215797777c9ee1c9c0ae9e3783
         dest-filename: host-spawn
         only-arches: [aarch64]
-
-  - name: zypak
-    sources:
-      - type: git
-        url: https://github.com/refi64/zypak
-        tag: v2022.04
-        commit: 55a60d110301e8dd37b631503c3524ab7baaf7aa
