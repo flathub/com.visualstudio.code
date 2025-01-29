@@ -60,8 +60,8 @@ modules:
       - /share/man
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/libsecret/0.21/libsecret-0.21.4.tar.xz
-        sha256: 163d08d783be6d4ab9a979ceb5a4fecbc1d9660d3c34168c581301cd53912b20
+        url: https://download.gnome.org/sources/libsecret/0.21/libsecret-0.21.6.tar.xz
+        sha256: 747b8c175be108c880d3adfb9c3537ea66e520e4ad2dccf5dce58003aeeca090
         x-checker-data:
           type: gnome
           name: libsecret
