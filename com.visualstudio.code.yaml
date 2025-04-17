@@ -42,6 +42,31 @@ cleanup:
 modules:
   - shared-modules/libusb/libusb.json
 
+  # Provide libsecret without gcrypt, forcing it to use the D-Bus backend
+  # https://github.com/flathub/org.signal.Signal/pull/756/commits/2caf105b18f906e7707f67b3cf7384a21f461564
+  - name: libsecret
+    buildsystem: meson
+    config-opts:
+      - -Dmanpage=false
+      - -Dcrypto=disabled
+      - -Dvapi=false
+      - -Dgtk_doc=false
+      - -Dintrospection=false
+      - -Dbash_completion=disabled
+    cleanup:
+      - /bin
+      - /include
+      - /lib/pkgconfig
+      - /share/man
+    sources:
+      - type: archive
+        url: https://download.gnome.org/sources/libsecret/0.21/libsecret-0.21.7.tar.xz
+        sha256: 6b452e4750590a2b5617adc40026f28d2f4903de15f1250e1d1c40bfd68ed55e
+        x-checker-data:
+          type: gnome
+          name: libsecret
+          stable-only: true
+
   - name: vscode
     buildsystem: simple
     build-commands:
@@ -95,9 +120,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [x86_64]
-        url: https://update.code.visualstudio.com/1.95.3/linux-deb-x64/stable
-        sha256: 176286acb16b5bad1f0431947c3fb17813c5a84ee85a3395c7620379a4a70086
-        size: 103735158
+        url: https://update.code.visualstudio.com/1.99.2/linux-deb-x64/stable
+        sha256: 8f6b53f866c1afb35e61b52d99bc83f2e5959eee41d80bb69996a31169957f90
+        size: 104134618
         x-checker-data:
           type: json
           url: https://api.github.com/repos/microsoft/vscode/releases/latest
@@ -109,9 +134,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [aarch64]
-        url: https://update.code.visualstudio.com/1.95.3/linux-deb-arm64/stable
-        sha256: 61267026ad435efff9c67703652b18a25906b8878b8fb8d87ad3260632e07489
-        size: 96299278
+        url: https://update.code.visualstudio.com/1.99.2/linux-deb-arm64/stable
+        sha256: 20e7ef599021a6ae187b5393806dcdbf697e870494c7b0f445d26fe7162449df
+        size: 100139038
         x-checker-data:
           type: json
           url: https://api.github.com/repos/microsoft/vscode/releases/latest
