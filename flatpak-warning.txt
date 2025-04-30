@@ -16,7 +16,7 @@ To execute commands on the host system, run inside the sandbox:
   $ host-spawn <COMMAND>
   
 To make the Integrated Terminal automatically use the host system's shell,
-you can add this to the settings:
+you can add this to your profile settings:
 
 {
   "terminal.integrated.defaultProfile.linux": "bash",
