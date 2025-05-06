@@ -25,6 +25,8 @@ finish-args:
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.freedesktop.secrets
   - --talk-name=org.freedesktop.Flatpak
+  - --talk-name=org.kde.kwalletd5
+  - --talk-name=org.kde.kwalletd6
   - --talk-name=com.canonical.AppMenu.Registrar
   - --talk-name=com.canonical.AppMenu.Registrar.*
 add-extensions:
