@@ -120,9 +120,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [x86_64]
-        url: https://update.code.visualstudio.com/1.101.2/linux-deb-x64/stable
-        sha256: b8a90a787778ce79ff616fcac689339479e7eab1dc541ece208a97caa51a153b
-        size: 108597498
+        url: https://update.code.visualstudio.com/1.102.0/linux-deb-x64/stable
+        sha256: 236bee2d6d9373e779e65c62be0fcb277ac57c0acdc14f3469b148574f1232be
+        size: 108729110
         x-checker-data:
           type: json
           url: https://api.github.com/repos/microsoft/vscode/releases/latest
@@ -134,9 +134,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [aarch64]
-        url: https://update.code.visualstudio.com/1.101.2/linux-deb-arm64/stable
-        sha256: b3518d070bb87867f14ee72c12803b7b03fbd3bd051314338e53d472160ec204
-        size: 100446558
+        url: https://update.code.visualstudio.com/1.102.0/linux-deb-arm64/stable
+        sha256: c5011e6d752e14cd2d9951632ff0106196654873725d9b3af1f59de3755e0394
+        size: 100498766
         x-checker-data:
           type: json
           url: https://api.github.com/repos/microsoft/vscode/releases/latest
@@ -170,7 +170,8 @@ modules:
           url: https://api.github.com/repos/1player/host-spawn/releases/latest
           version-query: .tag_name
           timestamp-query: .published_at
-          url-query: '"https://github.com/1player/host-spawn/releases/download/" + $version + "/host-spawn-x86_64"'
+          url-query: '"https://github.com/1player/host-spawn/releases/download/" +
+            $version + "/host-spawn-x86_64"'
 
       - type: file
         url: https://github.com/1player/host-spawn/releases/download/v1.6.1/host-spawn-aarch64
@@ -182,4 +183,5 @@ modules:
           url: https://api.github.com/repos/1player/host-spawn/releases/latest
           version-query: .tag_name
           timestamp-query: .published_at
-          url-query: '"https://github.com/1player/host-spawn/releases/download/" + $version + "/host-spawn-aarch64"'
+          url-query: '"https://github.com/1player/host-spawn/releases/download/" +
+            $version + "/host-spawn-aarch64"'
