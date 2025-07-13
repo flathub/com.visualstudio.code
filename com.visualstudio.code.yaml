@@ -121,9 +121,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [x86_64]
-        url: https://update.code.visualstudio.com/1.99.3/linux-deb-x64/stable
-        sha256: 2e2923bea718b4a059a323994eef53412efac3393b5456e91776efc89d8a354e
-        size: 104147246
+        url: https://update.code.visualstudio.com/1.101.2/linux-deb-x64/stable
+        sha256: b8a90a787778ce79ff616fcac689339479e7eab1dc541ece208a97caa51a153b
+        size: 108597498
         x-checker-data:
           type: json
           url: https://api.github.com/repos/microsoft/vscode/releases/latest
@@ -135,9 +135,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [aarch64]
-        url: https://update.code.visualstudio.com/1.99.3/linux-deb-arm64/stable
-        sha256: 7c241ee21b09356daf5ef696b260427e85bdfe0cc164c16f4460f3dd353b3dd5
-        size: 100134710
+        url: https://update.code.visualstudio.com/1.101.2/linux-deb-arm64/stable
+        sha256: b3518d070bb87867f14ee72c12803b7b03fbd3bd051314338e53d472160ec204
+        size: 100446558
         x-checker-data:
           type: json
           url: https://api.github.com/repos/microsoft/vscode/releases/latest
@@ -162,12 +162,25 @@ modules:
       - install -Dm755 host-spawn /app/bin/host-spawn
     sources:
       - type: file
-        url: https://github.com/1player/host-spawn/releases/download/1.5.0/host-spawn-x86_64
-        sha256: dbf67e7e111c4fe1edb0c642cbb4193064ca5b384aeb1054fc2befba6ed88b83
+        url: https://github.com/1player/host-spawn/releases/download/v1.6.1/host-spawn-x86_64
+        sha256: 733746ab498e07d065cbecf80bacd447eb21846d1462e8fe23fdd9d9dc977b50
         dest-filename: host-spawn
         only-arches: [x86_64]
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/1player/host-spawn/releases/latest
+          version-query: .tag_name
+          timestamp-query: .published_at
+          url-query: '"https://github.com/1player/host-spawn/releases/download/" + $version + "/host-spawn-x86_64"'
+
       - type: file
-        url: https://github.com/1player/host-spawn/releases/download/1.5.0/host-spawn-aarch64
-        sha256: c42c12be6cdd83e374b847bec836659fb45231215797777c9ee1c9c0ae9e3783
+        url: https://github.com/1player/host-spawn/releases/download/v1.6.1/host-spawn-aarch64
+        sha256: 71b7744a4d0b29279523cc0f0ed1a7af5e9555510bd9e6d4685391b59faefaac
         dest-filename: host-spawn
         only-arches: [aarch64]
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/1player/host-spawn/releases/latest
+          version-query: .tag_name
+          timestamp-query: .published_at
+          url-query: '"https://github.com/1player/host-spawn/releases/download/" + $version + "/host-spawn-aarch64"'
