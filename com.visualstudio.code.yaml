@@ -120,9 +120,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [x86_64]
-        url: https://update.code.visualstudio.com/1.102.1/linux-deb-x64/stable
-        sha256: da0c3893d5c3a8eb85ecfc72751f969632f1afad2a8037acee5673fa2674001d
-        size: 108719178
+        url: https://update.code.visualstudio.com/1.103.0/linux-deb-x64/stable
+        sha256: 46c4b9c83e5ea7ae1fbdcac679c39de878c50c1ec3bc73a7fc2e384823b559ae
+        size: 113031942
         x-checker-data:
           type: json
           url: https://api.github.com/repos/microsoft/vscode/releases/latest
@@ -161,8 +161,8 @@ modules:
       - install -Dm755 host-spawn /app/bin/host-spawn
     sources:
       - type: file
-        url: https://github.com/1player/host-spawn/releases/download/v1.6.1/host-spawn-x86_64
-        sha256: 733746ab498e07d065cbecf80bacd447eb21846d1462e8fe23fdd9d9dc977b50
+        url: https://github.com/1player/host-spawn/releases/download/v1.6.2/host-spawn-x86_64
+        sha256: 077bc09a087292447ba17cfe2156a93f71bf56c4c6be8e38d3abe65c1240f34c
         dest-filename: host-spawn
         only-arches: [x86_64]
         x-checker-data:
@@ -174,8 +174,8 @@ modules:
             $version + "/host-spawn-x86_64"'
 
       - type: file
-        url: https://github.com/1player/host-spawn/releases/download/v1.6.1/host-spawn-aarch64
-        sha256: 71b7744a4d0b29279523cc0f0ed1a7af5e9555510bd9e6d4685391b59faefaac
+        url: https://github.com/1player/host-spawn/releases/download/v1.6.2/host-spawn-aarch64
+        sha256: 8b30215b0b6b66c8c34a3e22d372dd39020295cd0904608bc2c5f5ecff829e5f
         dest-filename: host-spawn
         only-arches: [aarch64]
         x-checker-data:
