@@ -83,8 +83,8 @@ modules:
       - install -Dm644 flatpak-warning.txt -t /app/share/vscode
       - install -D apply_extra -t /app/bin
       - cp /usr/bin/ar /app/bin
-      - ARCH_TRIPLE=$(gcc --print-multiarch) && cp /usr/lib/${ARCH_TRIPLE}/libbfd-*.so
-        /app/lib
+      - ARCH_TRIPLE=$(gcc --print-multiarch) && cp /usr/lib/${ARCH_TRIPLE}/libbfd-*.so /app/lib
+      - ARCH_TRIPLE=$(gcc --print-multiarch) && cp /usr/lib/${ARCH_TRIPLE}/libsframe* /app/lib
       - ARCH_TRIPLE=$(gcc --print-multiarch) && ln -s /usr/lib/${ARCH_TRIPLE}/libtinfo.so/app/lib/libtinfo.so.5
       - mkdir /app/tools
     sources:
