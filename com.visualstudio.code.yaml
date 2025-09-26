@@ -122,9 +122,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [x86_64]
-        url: https://update.code.visualstudio.com/1.104.1/linux-deb-x64/stable
-        sha256: b2671b1d820def4c72e791e714c4af83caee684eedb2c0ae1f0590861b0ee71a
-        size: 113131966
+        url: https://update.code.visualstudio.com/1.104.2/linux-deb-x64/stable
+        sha256: 6bbe534d4f9b9932a858111420ff48555dcaf911d67a2b6997b2a1e240fae728
+        size: 113125558
         x-checker-data:
           type: json
           url: https://api.github.com/repos/microsoft/vscode/releases/latest
@@ -136,9 +136,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [aarch64]
-        url: https://update.code.visualstudio.com/1.104.1/linux-deb-arm64/stable
-        sha256: a02a303abf8560a861762c9b137d368040c8cb8539c273b501b8953f5400c4bb
-        size: 104382626
+        url: https://update.code.visualstudio.com/1.104.2/linux-deb-arm64/stable
+        sha256: f3568849a9f2b45d66a41503829cd147985eec89b562c20e2e65d09302e76a2e
+        size: 104386906
         x-checker-data:
           type: json
           url: https://api.github.com/repos/microsoft/vscode/releases/latest
