@@ -187,3 +187,19 @@ modules:
           timestamp-query: .published_at
           url-query: '"https://github.com/1player/host-spawn/releases/download/" +
             $version + "/host-spawn-aarch64"'
+
+  - name: docker-flatpak-wrapper
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 docker /app/bin/docker
+      - install -Dm755 docker-compose /app/bin/docker-compose
+    sources:
+      - type: file
+        url: https://raw.githubusercontent.com/ScatteredCognition/docker-flatpak-wrapper/refs/heads/main/docker
+        sha256: 061197cfe6142c1361b6fe8fbe73ea7035dd9f81c8ac398aefa6cf31102506ef
+        dest-filename: docker
+      
+      - type: file
+        url: https://raw.githubusercontent.com/ScatteredCognition/docker-flatpak-wrapper/refs/heads/main/docker-compose
+        sha256: 3fd32760ab3db81755bf76212294269eb2d89b4c68019a481bbaf55a83d80f44
+        dest-filename: docker-compose
