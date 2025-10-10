@@ -195,7 +195,7 @@ modules:
       - install -Dm755 docker-compose /app/bin/docker-compose
     sources:
       - type: file
-        file: docker-flatpak-wrapper/docker
+        path: docker-flatpak-wrapper/docker
       
       - type: file
-        file: docker-flatpak-wrapper/docker-compose
+        path: docker-flatpak-wrapper/docker-compose
