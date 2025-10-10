@@ -195,11 +195,11 @@ modules:
       - install -Dm755 docker-compose /app/bin/docker-compose
     sources:
       - type: file
-        url: https://raw.githubusercontent.com/ScatteredCognition/docker-flatpak-wrapper/refs/heads/main/docker
-        sha256: 061197cfe6142c1361b6fe8fbe73ea7035dd9f81c8ac398aefa6cf31102506ef
+        url: https://raw.githubusercontent.com/ScatteredCognition/docker-flatpak-wrapper/refs/heads/v1/docker
+        sha256: d1fc77e7c8c16ae3d5fefe2c9b097c5cfeb8e27a9c14ea2c8ef459f95eef0d90
         dest-filename: docker
       
       - type: file
-        url: https://raw.githubusercontent.com/ScatteredCognition/docker-flatpak-wrapper/refs/heads/main/docker-compose
-        sha256: 3fd32760ab3db81755bf76212294269eb2d89b4c68019a481bbaf55a83d80f44
+        url: https://raw.githubusercontent.com/ScatteredCognition/docker-flatpak-wrapper/refs/heads/v1/docker-compose
+        sha256: e5a771a5fdd8e0e74279eb9f8e8fd38f93c8dc9b8e05d96a0402e83395e62b07
         dest-filename: docker-compose
