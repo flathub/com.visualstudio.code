@@ -152,8 +152,14 @@ modules:
       - install -Dm644 ../krb5.conf /app/etc/krb5.conf
     sources:
       - type: archive
-        url: https://kerberos.org/dist/krb5/1.20/krb5-1.20.tar.gz
-        sha256: 7e022bdd3c851830173f9faaa006a230a0e0fdad4c953e85bff4bf0da036e12f
+        url: https://kerberos.org/dist/krb5/1.22/krb5-1.22.1.tar.gz
+        sha256: 1a8832b8cad923ebbf1394f67e2efcf41e3a49f460285a66e35adec8fa0053af
+        x-checker-data:
+          type: html
+          url: https://kerberos.org/dist/
+          version-pattern: Kerberos V5 Release ([\d.-]+) - current release
+          url-template: https://kerberos.org/dist/krb5/$major.$minor/krb5-$version.tar.gz
+
       - type: file
         path: krb5.conf
 
