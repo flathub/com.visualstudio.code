@@ -197,9 +197,17 @@ modules:
     build-commands:
       - install -Dm755 docker /app/bin/docker
       - install -Dm755 docker-compose /app/bin/docker-compose
+      - install -Dm755 podman /app/bin/podman
+      - install -Dm755 podman-compose /app/bin/podman-compose
     sources:
       - type: file
         path: docker-flatpak-wrapper/docker
       
       - type: file
         path: docker-flatpak-wrapper/docker-compose
+      
+      - type: file
+        path: docker-flatpak-wrapper/podman
+      
+      - type: file
+        path: docker-flatpak-wrapper/podman-compose
