@@ -17,6 +17,10 @@ finish-args:
   - --device=all
   - --allow=devel
   - --filesystem=host
+  # required to enable access to docker/podman sockets
+  - --filesystem=xdg-run/podman/podman.sock
+  - --filesystem=/run/podman/podman.sock
+  - --filesystem=/var/run/docker.sock
   - --env=NPM_CONFIG_GLOBALCONFIG=/app/etc/npmrc
   - --env=LD_LIBRARY_PATH=/app/lib
   # required to fix cursor scaling on wayland
