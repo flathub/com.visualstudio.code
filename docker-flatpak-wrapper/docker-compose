@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+if [[ "$(host-spawn -no-pty command -v docker-compose)" == *"docker-compose"* ]]; then
+    #host-spawn -no-pty command -v docker-compose returns the path to docker-compose binary
+    #echo "docker found"
+    exec host-spawn docker-compose "$@"
+elif [[ "$(host-spawn -no-pty command -v podman-compose)" == *"podman-compose"* ]]; then
+    #host-spawn -no-pty command -v podman-compose returns the path to podman-compose binary
+    #echo "podman found"
+    exec host-spawn podman-compose "$@"
+fi

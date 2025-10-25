@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+if [[ "$(host-spawn -no-pty command -v docker)" == *"docker"* ]]; then
+    #host-spawn -no-pty command -v docker returns the path to docker binary
+    #echo "docker found"
+    exec host-spawn docker "$@"
+elif [[ "$(host-spawn -no-pty command -v podman)" == *"podman"* ]]; then
+    #host-spawn -no-pty command -v podman returns the path to podman binary
+    #echo "podman found"
+    exec host-spawn podman "$@"
+fi
