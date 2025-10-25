@@ -14,6 +14,7 @@ finish-args:
   - --socket=x11
   - --socket=pulseaudio
   - --socket=ssh-auth
+  - --socket=gpg-agent
   - --device=all
   - --allow=devel
   - --filesystem=host
