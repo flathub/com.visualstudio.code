@@ -40,8 +40,6 @@ cleanup:
   - /share/gtk-doc
   - '*.la'
 modules:
-  - shared-modules/libusb/libusb.json
-
   # Provide libsecret without gcrypt, forcing it to use the D-Bus backend
   # https://github.com/flathub/org.signal.Signal/pull/756/commits/2caf105b18f906e7707f67b3cf7384a21f461564
   - name: libsecret
