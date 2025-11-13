@@ -15,8 +15,8 @@
   </description>
   <screenshots>
     <screenshot type="default">
-      <image>https://code.visualstudio.com/home/home-screenshot-linux-lg.png</image>
-      <caption>Editing TypeScript and searching for extensions</caption>
+      <image>https://code.visualstudio.com/assets/docs/getstarted/userinterface/tabs-hero.png</image>
+      <caption>Editing TypeScript</caption>
     </screenshot>
   </screenshots>
   <launchable type="desktop-id">com.visualstudio.code.desktop</launchable>
@@ -24,8 +24,11 @@
     <content_attribute id="social-info">moderate</content_attribute>
   </content_rating>
   <releases>
-    <release version="1.105.1" date="2025-10-15">
+    <release version="1.106.0" date="2025-11-12">
       <description></description>
+    </release>
+    <release version="1.105.1" date="2025-10-15">
+      <description/>
     </release>
     <release version="1.104.1" date="2025-09-18">
       <description/>
