@@ -15,8 +15,8 @@
   </description>
   <screenshots>
     <screenshot type="default">
-      <image>https://code.visualstudio.com/home/home-screenshot-linux-lg.png</image>
-      <caption>Editing TypeScript and searching for extensions</caption>
+      <image>https://code.visualstudio.com/assets/docs/getstarted/userinterface/tabs-hero.png</image>
+      <caption>Editing TypeScript</caption>
     </screenshot>
   </screenshots>
   <launchable type="desktop-id">com.visualstudio.code.desktop</launchable>
