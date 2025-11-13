@@ -17,6 +17,10 @@ finish-args:
   - --device=all
   - --allow=devel
   - --filesystem=host
+  # required to enable access to docker/podman sockets
+  - --filesystem=xdg-run/podman/podman.sock
+  - --filesystem=/run/podman/podman.sock
+  - --filesystem=/run/docker.sock
   - --env=NPM_CONFIG_GLOBALCONFIG=/app/etc/npmrc
   - --env=LD_LIBRARY_PATH=/app/lib
   # required to fix cursor scaling on wayland
@@ -191,3 +195,23 @@ modules:
           timestamp-query: .published_at
           url-query: '"https://github.com/1player/host-spawn/releases/download/" +
             $version + "/host-spawn-aarch64"'
+
+  - name: docker-flatpak-wrapper
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 docker /app/bin/docker
+      - install -Dm755 docker-compose /app/bin/docker-compose
+      - install -Dm755 podman /app/bin/podman
+      - install -Dm755 podman-compose /app/bin/podman-compose
+    sources:
+      - type: file
+        path: docker-flatpak-wrapper/docker
+      
+      - type: file
+        path: docker-flatpak-wrapper/docker-compose
+      
+      - type: file
+        path: docker-flatpak-wrapper/podman
+      
+      - type: file
+        path: docker-flatpak-wrapper/podman-compose
