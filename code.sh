@@ -4,6 +4,7 @@ set -e
 shopt -s nullglob
 
 FIRST_RUN="${XDG_CONFIG_HOME}/flatpak-vscode-first-run"
+WAYLAND_OPTS=""
 
 function msg() {
   echo "flatpak-vscode: $*" >&2
@@ -12,6 +13,17 @@ function msg() {
 if [ ! -f ${FIRST_RUN} ]; then
   WARNING_FILE="/app/share/vscode/flatpak-warning.txt"
   touch ${FIRST_RUN}
+fi
+
+if [[ $XDG_SESSION_TYPE == "wayland" && -e "$WAYLAND_DISPLAY" ]]
+then
+    WAYLAND_OPTS="$WAYLAND_OPTS --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations,WebRTCPipeWireCapturer"
+    if  [ -c /dev/nvidia0 ]
+    then
+        WAYLAND_OPTS="$WAYLAND_OPTS --disable-gpu-sandbox"
+    fi
+else
+    WAYLAND_OPTS="$WAYLAND_OPTS --enable-features=WebRTCPipeWireCapturer"
 fi
 
 PYTHON_SITEDIR=$(python3 <<EOFPYTHON
@@ -67,4 +79,5 @@ fi
 exec env ELECTRON_RUN_AS_NODE=1 PATH="${PATH}:${XDG_DATA_HOME}/node_modules/bin" \
   /app/bin/zypak-wrapper.sh /app/extra/vscode/code /app/extra/vscode/resources/app/out/cli.js \
   --ms-enable-electron-run-as-node --extensions-dir=${XDG_DATA_HOME}/vscode/extensions \
+  ${WAYLAND_OPTS} \
   "$@" ${WARNING_FILE}
