@@ -13,34 +13,38 @@ to access SDKs on your host system!
 
 To execute commands on the host system, run inside the sandbox:
 
-  $ flatpak-spawn --host <COMMAND>
+  $ host-spawn <COMMAND>
   
 To make the Integrated Terminal automatically use the host system's shell,
-you can add this to the settings:
-
+you can add this to your profile settings:
 
 {
   "terminal.integrated.defaultProfile.linux": "bash",
   "terminal.integrated.profiles.linux": {
     "bash": {
-      "path": "/usr/bin/flatpak-spawn",
-      "args": ["--host", "--env=TERM=xterm-256color", "bash"]
+      "path": "host-spawn",
+      "args": ["bash"]
     }
   }
 }
 
-This flatpak provides a standard development environment (gcc, python, etc).
+This Flatpak provides a standard development environment (gcc, python, etc).
 To see what's available:
 
   $ flatpak run --command=sh com.visualstudio.code
   $ ls /usr/bin (shared runtime)
   $ ls /app/bin (bundled with this flatpak)
 
-To get support for additional languages, you have to install SDK extensions, e.g.
+To get support for additional languages or tools within the Flatpak, you have to install SDK extensions, e.g.
 
   $ flatpak install flathub org.freedesktop.Sdk.Extension.dotnet
   $ flatpak install flathub org.freedesktop.Sdk.Extension.golang
   $ FLATPAK_ENABLE_SDK_EXT=dotnet,golang flatpak run com.visualstudio.code
+
+Similarly for shells and other tools:
+
+  $ flatpak install com.visualstudio.code.tool.fish
+  $ flatpak install com.visualstudio.code.tool.podman
 
 You can use
 

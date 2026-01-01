@@ -1,40 +1,39 @@
 app-id: com.visualstudio.code
-default-branch: stable
 runtime: org.freedesktop.Sdk
-runtime-version: '22.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 base: org.electronjs.Electron2.BaseApp
-base-version: '22.08'
+base-version: '25.08'
 command: code
 tags: [proprietary]
 separate-locales: false
 finish-args:
   - --require-version=0.10.3
+  - --share=network
   - --share=ipc
-  - --socket=x11
+  - --socket=wayland
+  - --socket=fallback-x11
   - --socket=pulseaudio
   - --socket=ssh-auth
-  - --share=network
   - --device=all
-  - --filesystem=xdg-config/gtk-3.0
-  - --filesystem=host
   - --allow=devel
+  - --filesystem=host
+  - --env=NPM_CONFIG_GLOBALCONFIG=/app/etc/npmrc
+  - --env=LD_LIBRARY_PATH=/app/lib
+  # required to fix cursor scaling on wayland
+  - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
+  - --system-talk-name=org.freedesktop.login1
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.freedesktop.secrets
   - --talk-name=org.freedesktop.Flatpak
-  - --env=NPM_CONFIG_GLOBALCONFIG=/app/etc/npmrc
-  - --env=LD_LIBRARY_PATH=/app/lib
-  - --env=ZYPAK_SPAWN_LATEST_ON_REEXEC=0
-  - --filesystem=xdg-config/kdeglobals:ro
   - --talk-name=com.canonical.AppMenu.Registrar
   - --talk-name=com.canonical.AppMenu.Registrar.*
-  - --system-talk-name=org.freedesktop.login1
   - --filesystem=xdg-run/app/com.discordapp.Discord:create
 add-extensions:
   com.visualstudio.code.tool:
     directory: tools
     subdirectories: true
-    version: '22.08'
+    version: '25.08'
     add-ld-path: lib
     no-autodownload: true
 cleanup:
@@ -43,11 +42,6 @@ cleanup:
   - /share/gtk-doc
   - '*.la'
 modules:
-
-  - shared-modules/libsecret/libsecret.json
-
-  - shared-modules/libusb/libusb.json
-
   - name: vscode
     buildsystem: simple
     build-commands:
@@ -65,6 +59,8 @@ modules:
       - install -D apply_extra -t /app/bin
       - cp /usr/bin/ar /app/bin
       - ARCH_TRIPLE=$(gcc --print-multiarch) && cp /usr/lib/${ARCH_TRIPLE}/libbfd-*.so
+        /app/lib
+      - ARCH_TRIPLE=$(gcc --print-multiarch) && cp /usr/lib/${ARCH_TRIPLE}/libsframe*
         /app/lib
       - ARCH_TRIPLE=$(gcc --print-multiarch) && ln -s /usr/lib/${ARCH_TRIPLE}/libtinfo.so/app/lib/libtinfo.so.5
       - mkdir /app/tools
@@ -101,29 +97,29 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [x86_64]
-        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.81.0-1690980880_amd64.deb
-        sha256: 9f85a05209f2b8b403acc48def3678eb5fcc469425b75183319583ffb6849870
-        size: 96337692
+        url: https://update.code.visualstudio.com/1.107.0/linux-deb-x64/stable
+        sha256: 88a9198b18c6df0b807c716861af7cbb403bc9bc4dd5617803b01dc03efd785b
+        size: 114395550
         x-checker-data:
-          type: debian-repo
-          package-name: code
-          root: https://packages.microsoft.com/repos/code
-          dist: stable
-          component: main
+          type: json
+          url: https://api.github.com/repos/microsoft/vscode/releases/latest
+          version-query: .tag_name
+          timestamp-query: .published_at
+          url-query: '"https://update.code.visualstudio.com/" + $version + "/linux-deb-x64/stable"'
           is-main-source: true
 
       - type: extra-data
         filename: code.deb
         only-arches: [aarch64]
-        url: https://packages.microsoft.com/repos/code/pool/main/c/code/code_1.81.0-1690979901_arm64.deb
-        sha256: ea74901874685486727dc3b41d9f4ed9abf73a526699108c58869e693014b659
-        size: 89073048
+        url: https://update.code.visualstudio.com/1.107.0/linux-deb-arm64/stable
+        sha256: 18759cd554dbd4311e6c60e3a85085eb9a8e4b8a58612be5b1556e033bc7ea7a
+        size: 104836282
         x-checker-data:
-          type: debian-repo
-          package-name: code
-          root: https://packages.microsoft.com/repos/code
-          dist: stable
-          component: main
+          type: json
+          url: https://api.github.com/repos/microsoft/vscode/releases/latest
+          version-query: .tag_name
+          timestamp-query: .published_at
+          url-query: '"https://update.code.visualstudio.com/" + $version + "/linux-deb-arm64/stable"'
 
   - name: kerberos
     subdir: src
@@ -131,14 +127,44 @@ modules:
       - install -Dm644 ../krb5.conf /app/etc/krb5.conf
     sources:
       - type: archive
-        url: https://kerberos.org/dist/krb5/1.20/krb5-1.20.tar.gz
-        sha256: 7e022bdd3c851830173f9faaa006a230a0e0fdad4c953e85bff4bf0da036e12f
+        url: https://kerberos.org/dist/krb5/1.22/krb5-1.22.1.tar.gz
+        sha256: 1a8832b8cad923ebbf1394f67e2efcf41e3a49f460285a66e35adec8fa0053af
+        x-checker-data:
+          type: html
+          url: https://kerberos.org/dist/
+          version-pattern: Kerberos V5 Release ([\d.-]+) - current release
+          url-template: https://kerberos.org/dist/krb5/$major.$minor/krb5-$version.tar.gz
+
       - type: file
         path: krb5.conf
 
-  - name: zypak
+  - name: host-spawn
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 host-spawn /app/bin/host-spawn
     sources:
-      - type: git
-        url: https://github.com/refi64/zypak
-        tag: v2022.04
-        commit: 55a60d110301e8dd37b631503c3524ab7baaf7aa
+      - type: file
+        url: https://github.com/1player/host-spawn/releases/download/v1.6.2/host-spawn-x86_64
+        sha256: 077bc09a087292447ba17cfe2156a93f71bf56c4c6be8e38d3abe65c1240f34c
+        dest-filename: host-spawn
+        only-arches: [x86_64]
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/1player/host-spawn/releases/latest
+          version-query: .tag_name
+          timestamp-query: .published_at
+          url-query: '"https://github.com/1player/host-spawn/releases/download/" +
+            $version + "/host-spawn-x86_64"'
+
+      - type: file
+        url: https://github.com/1player/host-spawn/releases/download/v1.6.2/host-spawn-aarch64
+        sha256: 8b30215b0b6b66c8c34a3e22d372dd39020295cd0904608bc2c5f5ecff829e5f
+        dest-filename: host-spawn
+        only-arches: [aarch64]
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/1player/host-spawn/releases/latest
+          version-query: .tag_name
+          timestamp-query: .published_at
+          url-query: '"https://github.com/1player/host-spawn/releases/download/" +
+            $version + "/host-spawn-aarch64"'
