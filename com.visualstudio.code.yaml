@@ -96,9 +96,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [x86_64]
-        url: https://update.code.visualstudio.com/1.108.2/linux-deb-x64/stable
-        sha256: af054638b3f0638ad117f636d8ca559e0b310d69d9369365c7f631fe81e0e7d1
-        size: 114493978
+        url: https://update.code.visualstudio.com/1.109.0/linux-deb-x64/stable
+        sha256: 5c45e63e503d608bfd02015073c18d7f5ec670fdbad270af108524ebfc53da42
+        size: 116502670
         x-checker-data:
           type: json
           url: https://api.github.com/repos/microsoft/vscode/releases/latest
@@ -110,9 +110,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [aarch64]
-        url: https://update.code.visualstudio.com/1.108.2/linux-deb-arm64/stable
-        sha256: 848f3571c51c69533c263e5a774e9ef3b200dcc6a23c3be5bbbe291f9dabce6a
-        size: 104852078
+        url: https://update.code.visualstudio.com/1.109.0/linux-deb-arm64/stable
+        sha256: 8b71efb19aaffbaf432eb3343e4ebc8e7d0dca0dd18481850450e0e894296039
+        size: 106920462
         x-checker-data:
           type: json
           url: https://api.github.com/repos/microsoft/vscode/releases/latest
@@ -126,8 +126,8 @@ modules:
       - install -Dm644 ../krb5.conf /app/etc/krb5.conf
     sources:
       - type: archive
-        url: https://kerberos.org/dist/krb5/1.22/krb5-1.22.1.tar.gz
-        sha256: 1a8832b8cad923ebbf1394f67e2efcf41e3a49f460285a66e35adec8fa0053af
+        url: https://kerberos.org/dist/krb5/1.22/krb5-1.22.2.tar.gz
+        sha256: 3243ffbc8ea4d4ac22ddc7dd2a1dc54c57874c40648b60ff97009763554eaf13
         x-checker-data:
           type: html
           url: https://kerberos.org/dist/
