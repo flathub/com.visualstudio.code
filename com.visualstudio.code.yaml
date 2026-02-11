@@ -28,6 +28,7 @@ finish-args:
   - --talk-name=org.freedesktop.Flatpak
   - --talk-name=com.canonical.AppMenu.Registrar
   - --talk-name=com.canonical.AppMenu.Registrar.*
+  - --filesystem=xdg-run/app/com.discordapp.Discord:create
 add-extensions:
   com.visualstudio.code.tool:
     directory: tools
