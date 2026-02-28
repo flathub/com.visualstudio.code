@@ -141,6 +141,7 @@ modules:
     buildsystem: simple
     build-commands:
       - install -Dm755 host-spawn /app/bin/host-spawn
+      - ln -s host-spawn /app/bin/podman
     sources:
       - type: file
         url: https://github.com/1player/host-spawn/releases/download/v1.6.2/host-spawn-x86_64
