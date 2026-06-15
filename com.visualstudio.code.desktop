@@ -14,5 +14,9 @@ Keywords=vscode;
 
 [Desktop Action new-empty-window]
 Name=New Empty Window
+Name[de]=Neues Fenster
+Name[fr]=Nouvelle vide
+Name[ru]=Новое окно
+Name[it]=Nuova vuota
 Exec=code --new-window %F
 Icon=com.visualstudio.code
