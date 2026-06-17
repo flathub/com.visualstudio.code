@@ -25,65 +25,27 @@
   </content_rating>
   <releases>
     <release version="1.125.0" date="2026-06-17">
-      <description></description>
+      <url>https://code.visualstudio.com/updates/</url>
     </release>
-    <release version="1.124.2" date="2026-06-12">
-      <description/>
-    </release>
-    <release version="1.124.0" date="2026-06-10">
-      <description/>
-    </release>
-    <release version="1.123.0" date="2026-06-05">
-      <description/>
-    </release>
-    <release version="1.122.1" date="2026-05-29">
-      <description/>
-    </release>
-    <release version="1.122.0" date="2026-05-28">
-      <description/>
-    </release>
-    <release version="1.121.0" date="2026-05-20">
-      <description/>
-    </release>
-    <release version="1.120.0" date="2026-05-13">
-      <description/>
-    </release>
-    <release version="1.119.0" date="2026-05-06">
-      <description/>
-    </release>
-    <release version="1.118.1" date="2026-04-30">
-      <description/>
-    </release>
-    <release version="1.116.0" date="2026-04-15">
-      <description/>
-    </release>
-    <release version="1.115.0" date="2026-04-08">
-      <description/>
-    </release>
-    <release version="1.113.0" date="2026-03-25">
-      <description/>
-    </release>
-    <release version="1.112.0" date="2026-03-18">
-      <description/>
-    </release>
-    <release version="1.110.1" date="2026-03-07">
-      <description/>
-    </release>
-    <release version="1.109.5" date="2026-02-20">
-      <description/>
-    </release>
-    <release version="1.109.2" date="2026-02-11">
-      <description/>
-    </release>
-    <release version="1.109.0" date="2026-02-04">
-      <description/>
-    </release>
-    <release version="1.108.2" date="2026-01-23">
-      <description/>
-    </release>
-    <release version="1.108.1" date="2026-01-16">
-      <description/>
-    </release>
+    <release version="1.124.2" date="2026-06-12"/>
+    <release version="1.124.0" date="2026-06-10"/>
+    <release version="1.123.0" date="2026-06-05"/>
+    <release version="1.122.1" date="2026-05-29"/>
+    <release version="1.122.0" date="2026-05-28"/>
+    <release version="1.121.0" date="2026-05-20"/>
+    <release version="1.120.0" date="2026-05-13"/>
+    <release version="1.119.0" date="2026-05-06"/>
+    <release version="1.118.1" date="2026-04-30"/>
+    <release version="1.116.0" date="2026-04-15"/>
+    <release version="1.115.0" date="2026-04-08"/>
+    <release version="1.113.0" date="2026-03-25"/>
+    <release version="1.112.0" date="2026-03-18"/>
+    <release version="1.110.1" date="2026-03-07"/>
+    <release version="1.109.5" date="2026-02-20"/>
+    <release version="1.109.2" date="2026-02-11"/>
+    <release version="1.109.0" date="2026-02-04"/>
+    <release version="1.108.2" date="2026-01-23"/>
+    <release version="1.108.1" date="2026-01-16"/>
     <release version="1.107.1" date="2025-12-17"/>
     <release version="1.107.0" date="2025-12-10"/>
     <release version="1.106.3" date="2025-11-26"/>
