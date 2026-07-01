@@ -7,6 +7,7 @@ Icon=com.visualstudio.code
 Type=Application
 StartupNotify=true
 StartupWMClass=Code
+StartupWMClass=code-url-handler
 Categories=TextEditor;Development;IDE;
 MimeType=text/plain;inode/directory;application/x-code-workspace;
 Actions=new-empty-window;
