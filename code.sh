@@ -65,6 +65,7 @@ if [ ! -e /etc/shells ] && [ -e /var/run/host/etc/shells ]; then
 fi
 
 exec env ELECTRON_RUN_AS_NODE=1 PATH="${PATH}:${XDG_DATA_HOME}/node_modules/bin" \
+  TMPDIR="$XDG_RUNTIME_DIR/app/${FLATPAK_ID:-com.visualstudio.code}" \
   /app/bin/zypak-wrapper.sh /app/extra/vscode/code /app/extra/vscode/resources/app/out/cli.js \
   --extensions-dir=${XDG_DATA_HOME}/vscode/extensions \
   "$@" ${WARNING_FILE}
