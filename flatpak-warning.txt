@@ -39,12 +39,12 @@ To get support for additional languages or tools within the Flatpak, you have to
 
   $ flatpak install flathub org.freedesktop.Sdk.Extension.dotnet
   $ flatpak install flathub org.freedesktop.Sdk.Extension.golang
-  $ FLATPAK_ENABLE_SDK_EXT=dotnet,golang flatpak run com.visualstudio.code
+  $ flatpak install flathub org.freedesktop.Sdk.Extension.podman
+  $ FLATPAK_ENABLE_SDK_EXT=dotnet,golang,podman flatpak run com.visualstudio.code
 
 Similarly for shells and other tools:
 
   $ flatpak install com.visualstudio.code.tool.fish
-  $ flatpak install com.visualstudio.code.tool.podman
 
 You can use
 
