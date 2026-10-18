@@ -1,9 +1,9 @@
 app-id: com.visualstudio.code
 runtime: org.freedesktop.Sdk
-runtime-version: '25.08'
+runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
 base: org.electronjs.Electron2.BaseApp
-base-version: '25.08'
+base-version: '26.08'
 command: code
 tags: [proprietary]
 separate-locales: false
@@ -34,7 +34,7 @@ add-extensions:
   com.visualstudio.code.tool:
     directory: tools
     subdirectories: true
-    version: '25.08'
+    version: '26.08'
     add-ld-path: lib
     no-autodownload: true
 cleanup:
@@ -135,9 +135,10 @@ modules:
           url: https://kerberos.org/dist/
           version-pattern: Kerberos V5 Release ([\d.-]+) - current release
           url-template: https://kerberos.org/dist/krb5/$major.$minor/krb5-$version.tar.gz
-
       - type: file
         path: krb5.conf
+      - type: patch
+        path: patch/krb5-Fix-strchr-conformance-to-C23.patch
 
   - name: host-spawn
     buildsystem: simple
