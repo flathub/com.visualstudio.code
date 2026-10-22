@@ -10,6 +10,9 @@ function msg() {
 }
 
 if [ ! -f ${FIRST_RUN} ]; then
+  for i in {0..9}; do
+      test -S $XDG_RUNTIME_DIR/discord-ipc-$i || ln -sf {app/com.discordapp.Discord,$XDG_RUNTIME_DIR}/discord-ipc-$i;
+  done
   WARNING_FILE="/app/share/vscode/flatpak-warning.txt"
   touch ${FIRST_RUN}
 fi
