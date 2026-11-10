@@ -1,9 +1,9 @@
 app-id: com.visualstudio.code
 runtime: org.freedesktop.Sdk
-runtime-version: '25.08'
+runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
 base: org.electronjs.Electron2.BaseApp
-base-version: '25.08'
+base-version: '26.08'
 command: code
 tags: [proprietary]
 separate-locales: false
@@ -34,7 +34,7 @@ add-extensions:
   com.visualstudio.code.tool:
     directory: tools
     subdirectories: true
-    version: '25.08'
+    version: '26.08'
     add-ld-path: lib
     no-autodownload: true
 cleanup:
@@ -98,9 +98,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [x86_64]
-        url: https://update.code.visualstudio.com/1.139.1/linux-deb-x64/stable
-        sha256: cc8e35cf69ff4c7e515e19fa981bf6aba41f61ddb61c79370e9fe460c5dbaf8b
-        size: 236699190
+        url: https://update.code.visualstudio.com/1.145.3/linux-deb-x64/stable
+        sha256: 68d94e293056455af5b40431f71a750eb3cd790813278e546668c7f154ae4258
+        size: 263042646
         x-checker-data:
           type: json
           url: https://api.github.com/repos/microsoft/vscode/releases/latest
@@ -112,9 +112,9 @@ modules:
       - type: extra-data
         filename: code.deb
         only-arches: [aarch64]
-        url: https://update.code.visualstudio.com/1.139.1/linux-deb-arm64/stable
-        sha256: 53cdf61fd870ec9663ea7baa5e4f79014acafc36d8c45b2678a8ce80d72d737d
-        size: 219225454
+        url: https://update.code.visualstudio.com/1.145.3/linux-deb-arm64/stable
+        sha256: 0338c2ebc083bcc7a93470ed7a79d9814ea43f36870a3e3778e5c829abefd356
+        size: 233421134
         x-checker-data:
           type: json
           url: https://api.github.com/repos/microsoft/vscode/releases/latest
@@ -128,8 +128,8 @@ modules:
       - install -Dm644 ../krb5.conf /app/etc/krb5.conf
     sources:
       - type: archive
-        url: https://kerberos.org/dist/krb5/1.22/krb5-1.22.2.tar.gz
-        sha256: 3243ffbc8ea4d4ac22ddc7dd2a1dc54c57874c40648b60ff97009763554eaf13
+        url: https://kerberos.org/dist/krb5/1.22/krb5-1.22.3.tar.gz
+        sha256: fe90af8441ad9fa9b064b8e53077cefb782a96f8a68276b031dc54af1789ff0b
         x-checker-data:
           type: html
           url: https://kerberos.org/dist/
