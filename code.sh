@@ -60,6 +60,13 @@ for i in "${SDK[@]}"; do
   fi
 done
 
+# Create /etc/static/shells before than /etc/shells, because /etc/shells ls linkd etc/static/shells
+# when use nixos is default has't /etc/static/shells
+if [ ! -f /etc/static/shells ]; then
+  mkdir -p /etc/static/
+  printf '/usr/bin/%s\n' sh bash > /etc/static/shells
+fi
+
 if [ ! -e /etc/shells ] && [ -e /var/run/host/etc/shells ]; then
   ln -s /var/run/host/etc/shells /etc/shells
 fi
